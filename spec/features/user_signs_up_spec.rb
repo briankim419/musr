@@ -13,11 +13,19 @@ feature 'user registers', %Q{
   #   an error message
 
   scenario 'provide valid registration information' do
+
     visit new_user_registration_path
+    # save_and_open_page
+
 
     fill_in 'Email', with: 'john@example.com'
     fill_in 'Password', with: 'password'
-    fill_in 'Password confirmation', with: 'password'
+    fill_in 'Password Confirmation', with: 'password'
+    fill_in 'First Name', with: 'first_name'
+    fill_in 'Last Name', with: 'last_name'
+    fill_in 'User Name', with: 'user_name'
+
+
 
     click_button 'Sign up'
 
