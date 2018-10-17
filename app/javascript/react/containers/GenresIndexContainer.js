@@ -12,6 +12,7 @@ class GenresIndexContainer extends Component {
   componentDidMount() {
     fetch('/api/v1/genres')
     .then(response => {
+
       if (response.ok) {
         return response;
       } else {
@@ -22,8 +23,9 @@ class GenresIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let fetchedGenres = body;
+      let fetchedGenres = body.genres
       this.setState({ genres: fetchedGenres})
+
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }

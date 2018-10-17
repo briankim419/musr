@@ -4,6 +4,13 @@ class Api::V1::GenresController < ApplicationController
   end
 
   def show
-    render json: Genre.find(params[:genre_id])
+    @genre = Genre.find(params[:id])
+    render json: @genre.to_json
+  end
+
+  def create
+    data = JSON.parse(request.body.read)
+    new_genre = Genre.create(name: data["name"])
+    render json: new_genre, adapter: :json
   end
 end
