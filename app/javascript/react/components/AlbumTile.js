@@ -8,11 +8,12 @@ const AlbumTile = props => {
 
 
   return(
-    <li>{name}</li>
-    <li>{description}</li>
-    <li>{artist}</li>
-    <li>{release}</li>
-
+    <div>
+      <li>{name}</li>
+      <li>{description}</li>
+      <li>{artist}</li>
+      <li>{release}</li>
+    </div>
   )
 }
 
