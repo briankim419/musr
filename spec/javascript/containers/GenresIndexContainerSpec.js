@@ -1,5 +1,4 @@
 import GenresIndexContainer from '../../../app/javascript/react/containers/GenresIndexContainer';
-import fetch from 'isomorphic-fetch';
 import fetchMock from 'fetch-mock'
 
 fdescribe('GenresIndexContainer', () => {
