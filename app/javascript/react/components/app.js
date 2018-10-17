@@ -1,19 +1,15 @@
-import 'babel-polyfill';
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Router, browserHistory, Route, IndexRoute } from 'react-router';
-import AlbumsFormContainer from '../containers/AlbumsFormContainer';
-import AlbumsContainer from '../containers/AlbumsContainer';
-import AlbumsIndex from './AlbumsIndex';
-import AlbumTile from './AlbumTile';
-import TextInputField from './TextInputField';
+
+
+import GenresIndexContainer from '../containers/GenresIndexContainer'
+import GenreShowContainer from '../containers/GenreShowContainer'
 
 export const App = (props) => {
   return (
     <Router history={browserHistory}>
-      <Route path='/' component={AlbumsIndex} />
+      <Route path='/genres' component={GenresIndexContainer} />
+      <Route path='/genres/:id' component={GenreShowContainer} />
     </Router>
-  )
+  );
 }
 
 export default App
