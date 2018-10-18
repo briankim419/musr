@@ -1,18 +1,15 @@
 import React, { Component } from 'react';
-import AlbumsContainer from './AlbumsContainer'
 
-class GenreShowContainer extends Component {
+class AlbumShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      genre: {},
-      albums: []
+      album: {}
     }
   }
 
   componentDidMount() {
-    let genreId = this.props.params.id
-    fetch(`/api/v1/genres/${genreId}`)
+    fetch(`/api/v1/genres/${this.props.params.genre_id}/albums/${this.props.params.id}`)
     .then(response => {
 
       if (response.ok) {
@@ -25,24 +22,22 @@ class GenreShowContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      let fetchedGenre = body
-      this.setState({ genre: fetchedGenre})
+      let fetchedAlbum = body.album
+      this.setState({ album: fetchedAlbum})
 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+
     return(
       <div>
-        <h1>{this.state.genre.name}</h1>
-        <AlbumsContainer
-          genreId = {this.props.params.id}
-        />
+        {this.state.album.name}
       </div>
 
     )
   }
 }
 
-export default GenreShowContainer;
+export default AlbumShowContainer;

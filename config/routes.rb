@@ -4,10 +4,21 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
-      resources :genres, only: [:index, :show, :create]
+      resources :genres, only: [:index, :show, :create] do
+        resources :albums, only: [:index, :show, :create, :new]
+      end
     end
   end
 
-  resources :genres, only: [:index, :show]
-  resources :albums, only: [:index, :show]
+  namespace :api do
+    namespace :v1 do
+      resources :albums, only: [:create, :new]
+    end
+  end
+
+  resources :genres, only: [:index, :show] do
+    resources :albums, only: [:index, :show, :new, :create]
+  end
+
+  resources :albums, only:[:new, :create]
 end

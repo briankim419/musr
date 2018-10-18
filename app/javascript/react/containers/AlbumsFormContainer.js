@@ -9,7 +9,8 @@ class AlbumsFormContainer extends Component {
       name: '',
       release_date: '',
       artist: '',
-      description: ''
+      description: '',
+      genre_id: ''
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -29,21 +30,40 @@ class AlbumsFormContainer extends Component {
       name: '',
       release_date: '',
       artist: '',
-      description: ''
+      description: '',
+      genre_id: ''
     })
   };
 
   handleSubmit(event) {
     event.preventDefault();
-    // below has both options for changing strings to integers
     let formPayload = {
       name: this.state.name,
       release_date: this.state.release_date,
-      description: this.state.description,
-      artist: this.state.artist
-    }
-    this.props.addNewAlbum(formPayload);
-    this.handleClearForm();
+      artist: this.state.artist,
+      description: this.state.description
+    };
+    fetch('/api/v1/albums', {
+      credentials: 'same-origin',
+      method: 'POST',
+      body: JSON.stringify(formPayload),
+      headers: { 'Content-Type': 'application/json' }
+    })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        debugger
+        this.setState({ fortune: body.fortune.text });
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render() {
@@ -51,7 +71,7 @@ class AlbumsFormContainer extends Component {
       <form onSubmit={this.handleSubmit}>
         <TextInputField
           label='Album Name:'
-          name='albumNameTitle'
+          name='name'
           value={this.state.name}
           handleChange={this.handleChange}
         />
@@ -71,6 +91,12 @@ class AlbumsFormContainer extends Component {
           label='Description:'
           name='description'
           value={this.state.description}
+          handleChange={this.handleChange}
+        />
+        <TextInputField
+          label='Genre:'
+          name='genre_id'
+          value={this.state.genre_id}
           handleChange={this.handleChange}
         />
         <input className="button" type="submit" value="Submit" />

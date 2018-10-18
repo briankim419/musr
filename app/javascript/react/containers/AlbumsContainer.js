@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Dropzone from 'react-dropzone';
 import AlbumsFormContainer from './AlbumsFormContainer';
+import AlbumsIndex from '../components/AlbumsIndex';
+import TextInputField from '../components/TextInputField';
+import { Link } from 'react-router'
 
 class AlbumsContainer extends Component {
   constructor(props) {
@@ -9,7 +11,7 @@ class AlbumsContainer extends Component {
       albums: []
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleChange(event) {
@@ -18,43 +20,36 @@ class AlbumsContainer extends Component {
     })
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    const body = JSON.stringify({
-      name: this.state.name,
-      description: this.state.description
-    });
-    fetch('/api/v1/board_games/new', {
-      credentials: 'same-origin',
-      method: 'POST',
-      body: body
+  componentDidMount() {
+
+    fetch(`/api/v1/genres/${this.props.genreId}/albums`)
+    .then(response => {
+      if (response.ok) {
+        return response;
+      } else {
+        let errorMessage = `${response.status} (${response.statusText})`
+        error = new Error(message);
+        throw(error);
+      }
     })
     .then(response => response.json())
     .then(body => {
-      this.setState({ message: body.message })
+      let fetchedAlbums = body.albums
+      this.setState({ albums: fetchedAlbums})
+
+
     })
+    .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
-  onDrop(file) {
-    if(file.length == 1) {
-      this.setState({ file: file })
-    } else {
-      this.setState({ message: 'You can only upload one photo per board game.'})
-    }
-  }
+
   render() {
-     let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
+     // let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
 
     return(
       <div>
-        <h1>Albums</h1>
         <AlbumsIndex
-          albums ={this.state.albums}
+          albums = {this.state.albums}
         />
-
-        <AlbumFormContainer
-          addNewAlbum={handleAddNewAlbum}
-        />
-
       </div>
     )
   }
