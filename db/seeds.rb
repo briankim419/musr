@@ -19,6 +19,6 @@ genre_info.each do |genre|
   Genre.create(genre)
 end
 
-  Album.create(name:"Scorpion", description:"hip-hop genius", artist:"Drake", release_date:"03/09/2018", genre_id:2)
-  Album.create(name:"Red", description:"Not so genius", artist:"Taylor Swift", release_date:"03/09/2014", genre_id:1)
-  Album.create(name:"Mothership", description:"First Album for Led Zeppelin", artist:"Led Zeppelin", release_date:"02/14/1971", genre_id:1)
+  Album.create(name:"Scorpion", description:"hip-hop genius", artist:"Drake", release_date:"03/09/2018", genre_id:27)
+  Album.create(name:"Red", description:"Not so genius", artist:"Taylor Swift", release_date:"03/09/2014", genre_id:28)
+  Album.create(name:"Mothership", description:"First Album for Led Zeppelin", artist:"Led Zeppelin", release_date:"14/02/1971", genre_id:26)
