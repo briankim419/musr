@@ -1,32 +1,28 @@
-import GenresIndexContainer from '../../../app/javascript/react/containers/GenresIndexContainer';
+import GenreShowContainer from '../../../app/javascript/react/containers/GenreShowContainer';
 import fetchMock from 'fetch-mock'
 
-xdescribe('GenresIndexContainer', () => {
+describe('GenreShowContainer', () => {
   let wrapper;
-  let data;
+  let genre;
 
   beforeEach(() => {
-    data = {
-      genres: [
-        {id: 1, name: 'Rock'},
-        {id: 2, name: 'Classical'},
-        {id: 3, name: 'Jazz'}
-      ]
-    }
-    fetchMock.get('/api/v1/genres', {
+    genre: [
+      {id: 1, name: 'Rock'}
+    ]
+    fetchMock.get(`/api/v1/genres/1`, {
       status: 200,
-      body: data
+      body: genre
     });
     wrapper = mount(
-      <GenresIndexContainer />
+      <GenreShowContainer
+      params={{id: 1}}/>
     )
   })
   afterEach(fetchMock.restore)
 
   describe('header', () => {
     it('renders an h1', () => {
-      expect(wrapper.find('h1')).toBePresent()
-      expect(wrapper.find('h1').text()).toEqual('Genres')
+      console.log(wrapper.debug());
     })
 
     it('renders a p tag for each item returned from the api call', (done) => {
