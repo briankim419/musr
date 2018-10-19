@@ -18,10 +18,10 @@ RSpec.describe Api::V1::GenresController, type: :controller do
       expect(response.content_type).to eq "application/json"
 
       # expect(returned_json.length).to eq 1
-      expect(returned_json.length).to eq 7
+      expect(returned_json.length).to eq 1
 
-      expect(returned_json[0]["name"]).to eq "Rock"
-      expect(returned_json[1]["name"]).to eq "Classical"
+      expect(returned_json["genres"][0]["name"]).to eq "Rock"
+      expect(returned_json["genres"][1]["name"]).to eq "Classical"
     end
   end
 end
