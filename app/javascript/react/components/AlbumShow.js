@@ -2,22 +2,6 @@ import React from 'react';
 import { browserHistory, Link } from 'react-router';
 
 const AlbumShow = (props) => {
-  // let album_artwork = props.album_art.map(art => {
-  //   return(
-  //     <div className="art">
-  //       <p>{art.url}</p>
-  //     </div>
-  //   )
-  // })
-  // debugger;
-  // let imageUrl
-  // if (props.url) {
-  //   imageUrl = props.album_art
-  // } else {
-  //   imageUrl = ""
-  // }
-
-  // <img src={`${props.album_art.url}`} />
   return(
     <div className="row">
 
