@@ -11,4 +11,7 @@ FactoryBot.define do
     sequence(:user_name) { |n| "Random Name #{n}" }
   end
 
+  factory :genre do
+    name { 'name' }
+  end
 end
