@@ -1,5 +1,9 @@
 class AlbumsController < ApplicationController
+<<<<<<< HEAD
 
+=======
+skip_before_action :verify_authenticity_token
+>>>>>>> ba049f00f2e17993570c901db1b0995b14a46ad9
   def index
     @album = Album.find(params[:genre_id])
   end
