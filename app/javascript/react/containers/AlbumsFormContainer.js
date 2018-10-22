@@ -3,6 +3,8 @@ import TextInputField from '../components/TextInputField'
 import { Route, Redirect } from 'react-router'
 import { push } from 'react-router'
 import { browserHistory } from 'react-router'
+import Dropzone from 'react-dropzone';
+
 
 class AlbumsFormContainer extends Component {
   constructor(props) {
@@ -14,7 +16,8 @@ class AlbumsFormContainer extends Component {
       artist: '',
       description: '',
       genre_id: '',
-      errors: {}
+      errors: {},
+      file: []
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -25,6 +28,7 @@ class AlbumsFormContainer extends Component {
     this.validateDateInput = this.validateDateInput.bind(this);
     this.validateDescriptionInput = this.validateDescriptionInput.bind(this);
     this.validateGenreInput = this.validateGenreInput.bind(this);
+    this.onDrop = this.onDrop.bind(this);
   }
 
   validateAlbumInput(input) {
@@ -112,20 +116,21 @@ class AlbumsFormContainer extends Component {
   handleSubmit(event) {
     event.preventDefault();
     if((this.validateAlbumInput(this.state.name)) && (this.validateArtistInput(this.state.artist)) && (this.validateDateInput(this.state.release_date)) && (this.validateDescriptionInput(this.state.description)) && (this.validateGenreInput(this.state.genre_id))) {
-    let formPayload = {
-      name: this.state.name,
-      release_date: this.state.release_date,
-      artist: this.state.artist,
-      description: this.state.description,
-      genre_id: this.state.genre_id
-    };
+
+    let body = new FormData()
+    body.append("name", this.state.name)
+    body.append("release_date", this.state.release_date)
+    body.append("artist", this.state.artist)
+    body.append("description", this.state.description)
+    body.append("genre_id", this.state.genre_id)
+    body.append("albumart", this.state.file[0])
+
     fetch(`/api/v1/albums`, {
       credentials: 'same-origin',
       method: 'POST',
-      body: JSON.stringify(formPayload),
+      body: body,
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json' },
+        'Accept': 'application/json' },
         credentials: 'same-origin'
     })
     .then(response => {
@@ -139,12 +144,19 @@ class AlbumsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      debugger
       browserHistory.push(`/genres/${this.state.genre_id}/albums/${body.album.id}`)
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
-}
+  }
+
+  onDrop(file) {
+    if(file.length == 1) {
+      this.setState({ file: file })
+    } else {
+      this.setState({ message: 'You can only upload one photo per board game.'})
+    }
+  }
 
   render() {
     let errorDiv;
@@ -194,13 +206,22 @@ class AlbumsFormContainer extends Component {
         />
       <label>Genre</label>
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
-          <input type="radio" value="26" name="genre_id"/> Rock
-          <input type="radio" value="27" name="genre_id"/> Hip Hop/R&B
-          <input type="radio" value="28" name="genre_id"/> Country
-          <input type="radio" value="29" name="genre_id"/> Electronic
-          <input type="radio" value="30" name="genre_id"/> Jazz
-          <input type="radio" value="31" name="genre_id"/> Classical
+          <input type="radio" value="1" name="genre_id"/> Rock
+          <input type="radio" value="2" name="genre_id"/> Hip Hop/R&B
+          <input type="radio" value="3" name="genre_id"/> Country
+          <input type="radio" value="4" name="genre_id"/> Electronic
+          <input type="radio" value="5" name="genre_id"/> Jazz
+          <input type="radio" value="6" name="genre_id"/> Classical
         </div>
+
+        <section>
+          <div className="dropzone">
+            <Dropzone onDrop={this.onDrop}>
+              <p>Try dropping some files here, or click to select files to upload.</p>
+            </Dropzone>
+          </div>
+        </section>
+
         <input className="button" type="submit" value="Submit" />
       </form>
       </div>

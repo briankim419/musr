@@ -12,14 +12,21 @@ class Api::V1::AlbumsController < ApplicationController
   end
 
   def new
-    album = Album.new(name: data[:name], artist: data[:artist], description: data[:description], release_date: data[:release_date], genre_id: data[:genre_id])
+    album = Album.new(name: data[:name], artist: data[:artist], description: data[:description], release_date: data[:release_date], genre_id: data[:genre_id], album_art: data[:albumart])
 
     render json: {album: album}
   end
 
   def create
-    data = JSON.parse(request.body.read)
-    album = Album.new(name: data["name"], artist: data["artist"], description: data["description"], release_date: data["release_date"], genre_id: data["genre_id"])
+
+    # binding.pry
+    # data = JSON.parse(request.body.read)
+    # DO NOT USE REQUEST BODY READ!!!
+    data = params
+
+
+    album = Album.new(name: data["name"], artist: data["artist"], description: data["description"], release_date: data["release_date"], genre_id: data["genre_id"], album_art: data["albumart"])
+    # UPDATE THIS TO USE STRONG PARAMS
 
     if album.save
       render json: {album: album}, adapter: :json
