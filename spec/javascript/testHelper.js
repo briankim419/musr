@@ -3,6 +3,7 @@ import jasmineEnzyme from 'jasmine-enzyme';
 import React from 'react';
 import 'jasmine-ajax';
 import fetchPonyfill from 'fetch-ponyfill';
+
 const {fetch, Request, Response, Headers} = fetchPonyfill({});
 
 Object.assign(global, {
