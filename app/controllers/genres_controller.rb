@@ -7,6 +7,7 @@ class GenresController < ApplicationController
   def show
     @genre = Genre.find(params[:id])
     @album = @genre.albums
+    @genres = Genre.all
   end
 
 end
