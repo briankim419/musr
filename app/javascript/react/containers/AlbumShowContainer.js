@@ -37,7 +37,6 @@ class AlbumShowContainer extends Component {
   }
 
   render(){
-    debugger;
     return(
       <AlbumShow
         id={this.state.id}
