@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :user_name, presence: true, uniqueness: true
 
+  has_many :reviews
+
   mount_uploader :profile_photo, ProfilePhotoUploader
 
 end
