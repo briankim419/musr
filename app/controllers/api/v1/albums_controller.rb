@@ -18,7 +18,7 @@ class Api::V1::AlbumsController < ApplicationController
   end
 
   def create
-    data = JSON.parse(request.body.read)
+    data = params
     album = Album.new(name: data["name"], artist: data["artist"], description: data["description"], release_date: data["release_date"], genre_id: data["genre_id"])
 
     if album.save
