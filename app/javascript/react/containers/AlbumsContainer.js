@@ -44,7 +44,6 @@ class AlbumsContainer extends Component {
   }
 
   render() {
-     // let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
      let albums = this.state.albums.map(album => {
        return(
          <AlbumTile

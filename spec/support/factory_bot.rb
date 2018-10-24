@@ -14,4 +14,14 @@ FactoryBot.define do
   factory :genre do
     name { 'name' }
   end
+
+  # factory :album do
+  #   name { 'Test Album' }
+  #   artist { 'Dr. Test' }
+  #   description { 'Testing the Test' }
+  #   release_date { '04/04/2017' }
+  #   genre_id { genre.id }
+  #   album_art { 'fakeurl.com' }
+  #
+  # end
 end

@@ -29,6 +29,7 @@ xdescribe('GenreShowContainer', () => {
 
     it('renders a h1 tag for the genre name returned from the api call', (done) => {
       setTimeout(() => {
+        console.log(wrapper.debug());
         expect(wrapper.find('h1')).toBePresent()
         expect(wrapper.find('h1').text()).toEqual('Rock')
         done()

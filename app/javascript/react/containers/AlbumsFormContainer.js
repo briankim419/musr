@@ -123,7 +123,7 @@ class AlbumsFormContainer extends Component {
     body.append("artist", this.state.artist)
     body.append("description", this.state.description)
     body.append("genre_id", this.state.genre_id)
-    body.append("albumart", this.state.file[0])
+    body.append("album_art", this.state.file[0])
 
     fetch(`/api/v1/albums`, {
       credentials: 'same-origin',
@@ -215,7 +215,7 @@ class AlbumsFormContainer extends Component {
         </div>
 
         <section>
-          <div className="dropzone">
+          <div className="dropzone" name = 'album_art'>
             <Dropzone onDrop={this.onDrop}>
               <p>Try dropping some files here, or click to select files to upload.</p>
             </Dropzone>
