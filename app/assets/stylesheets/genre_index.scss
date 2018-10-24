@@ -4,21 +4,6 @@
 }
 
 
-// .tiles{
-//   align-items: center;
-//   border-style: solid;
-//   border-width: 4px;
-//   text-align: center;
-//   background-color: #8D3B72;
-//   border-radius: 15px;
-//   padding-top: 12px;
-//   border-spacing: 15px;
-// }
-// .tilesopacity {
-//   background-color: rgba(141, 59, 114, 0.6);
-//   //hexcode to decimal converter was used, 8D3B72
-//
-// }
 
 .button2 {
   font-weight: bold;
@@ -30,12 +15,12 @@
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 10px;
   box-shadow: 0 9px #999;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  width: 125%;
-  height: 100%;
+  width: 250px;
+  height: 100px;
 }
 
 .button2:hover {
@@ -56,19 +41,10 @@
 .columnss{
   margin: auto;
 }
-.columns{
-  align-items: center;
-  // margin: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
-  text-align: center;
-}
 
-#ap{
-  float: left;
-}
+// #ap{
+//   float: left;
+// }
 
 .albumtilebutton {
   font-weight: bold;

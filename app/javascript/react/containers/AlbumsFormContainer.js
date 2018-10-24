@@ -171,16 +171,23 @@ class AlbumsFormContainer extends Component {
 
 
     return(
-      <div>{errorDiv}
+      <div className="test ">
+      <h1 className="center"> New Album</h1>
+
+
+      <div className="small-11 large10 columnss">{errorDiv}
       <form onSubmit={this.handleSubmit}>
         <label>Album Name</label>
+        <div className="field">
         <input
           name='name'
           type = 'text'
           value={this.state.name}
           onChange={this.handleChange}
         />
+        </div>
       <label>Release Date</label>
+      <div className="field">
       <input
           label='Release Date:'
             type = 'date'
@@ -188,7 +195,9 @@ class AlbumsFormContainer extends Component {
           value={this.state.release_date}
           onChange={this.handleChange}
         />
+        </div>
       <label>Artist</label>
+      <div className="field">
       <input
           label='Artist:'
           name='artist'
@@ -196,7 +205,9 @@ class AlbumsFormContainer extends Component {
           value={this.state.artist}
           onChange={this.handleChange}
         />
+        </div>
       <label>Description</label>
+      <div className="field">
       <input
         label='Description:'
         type = 'text'
@@ -204,7 +215,9 @@ class AlbumsFormContainer extends Component {
         value={this.state.description}
         onChange={this.handleChange}
         />
+        </div>
       <label>Genre</label>
+      <div className="field">
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
           <input type="radio" value="1" name="genre_id"/> Rock
           <input type="radio" value="2" name="genre_id"/> Hip Hop/R&B
@@ -213,18 +226,23 @@ class AlbumsFormContainer extends Component {
           <input type="radio" value="5" name="genre_id"/> Jazz
           <input type="radio" value="6" name="genre_id"/> Classical
         </div>
+        </div>
 
         <section>
-          <div className="dropzone">
+          <div className="dropzone ">
             <Dropzone onDrop={this.onDrop}>
               <p>Try dropping some files here, or click to select files to upload.</p>
             </Dropzone>
           </div>
-        </section>
-
+          </section>
+          <div className="center">
         <input className="button" type="submit" value="Submit" />
+        </div>
+
       </form>
       </div>
+      </div>
+
     )
   }
 };

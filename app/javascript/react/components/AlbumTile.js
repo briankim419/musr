@@ -14,13 +14,14 @@ const AlbumTile = props => {
 
   return(
 
-    <div className= " album-tile small-10 large-2 columnss container ">
+    <div className= " album-tile small-12 large-10 columnss container ">
       <Link to={`/genres/${genreId}/albums/${albumId}`}>
       <div className="albumtilebutton">
         <h1 className="text">{name}</h1>
         </div>
       </Link>
     </div>
+
   )
 }
 

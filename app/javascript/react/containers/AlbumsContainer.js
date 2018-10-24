@@ -46,7 +46,7 @@ class AlbumsContainer extends Component {
      // let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
 
     return(
-      <div>
+      <div className="test">
         <AlbumsIndex
           albums = {this.state.albums}
         />

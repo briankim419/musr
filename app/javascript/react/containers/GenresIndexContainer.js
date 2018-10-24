@@ -40,14 +40,12 @@ class GenresIndexContainer extends Component {
     })
 
     return(
-      <div className="row">
-          <div className=" columns ">
-            <div className="container">
-              <h1>Pick Your Genre</h1>
-            </div>
 
+          <div className="center">
+              <h1>Pick Your Genre</h1>
+              <div className=" test2 ">
           {genres}
-          </div>
+      </div>
       </div>
     )
   }

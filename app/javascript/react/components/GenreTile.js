@@ -3,13 +3,20 @@ import { Link } from 'react-router';
 
 const GenreTile = (props) => {
   return(
-    <div id="ap" className="genre-tile  small-12 large-2 columns container text center ">
+
+    <div className="genre-tile large-4 columns ">
+
       <Link to={`/genres/${props.id}`}>
+
       <button className="button2">
+
       <p>{props.name}</p>
+
      </button>
+
       </Link>
-    </div>
+      </div>
+
   )
 }
 
