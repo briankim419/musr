@@ -31,22 +31,24 @@ class GenresIndexContainer extends Component {
   render(){
     let genres = this.state.genres.map(genre => {
       return(
+
         <GenreTile
           key={genre.id}
           id={genre.id}
           name={genre.name}
+
         />
       )
     })
 
     return(
+   <div className="center">
+      <h1>Pick Your Genre</h1>
 
-          <div className="center">
-              <h1>Pick Your Genre</h1>
-              <div className=" test2 ">
-          {genres}
-      </div>
-      </div>
+      <div id="">
+      {genres}
+    </div>
+    </div>
     )
   }
 }

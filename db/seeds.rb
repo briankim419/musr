@@ -8,7 +8,7 @@
 
 genre_info = [
   {name: 'Rock'},
-  {name: 'Hip Hop/R&B'},
+  {name: 'Hip-Hop'},
   {name: 'Country'},
   {name: 'Electronic'},
   {name: 'Jazz'},

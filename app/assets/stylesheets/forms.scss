@@ -13,7 +13,7 @@
 
 .field{
     width: 100%;
-    background-color: rgba(141, 59, 114, 0.6);
+    background-color: rgba(1, 186, 239, 0.8);
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
@@ -25,11 +25,11 @@
 }
 
 .field:hover {
-    background-color: #8D3B72;
+    background-color: #01BAEF;
 }
 
 .test {
-  background-color: #85CB33;
+  background-color: #6BF178;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
@@ -37,13 +37,23 @@
   padding-top: 30px;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
-.test2 {
-  background-color: #85CB33;
+.testALL {
+  background-color: #61707D;
   width: 50%;
-  padding-right: 30px;
   margin-left: 25%;
   margin-right: 25%;
-  padding-bottom: 400px;
+  padding-bottom: 40px;
   padding-top: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+#test2 {
+  background-color: #85CB33;
+  width: 50%;
+
+  margin-left: 25%;
+  margin-right: 25%;
+  // padding-bottom: 40px;
+  // padding-top: 30px;
+  padding: inherit;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }

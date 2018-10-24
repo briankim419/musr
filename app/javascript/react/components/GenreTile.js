@@ -4,14 +4,12 @@ import { Link } from 'react-router';
 const GenreTile = (props) => {
   return(
 
-    <div className="genre-tile large-4 columns ">
+    <div className="genre-tile large-4 columns newspaper ">
 
-      <Link to={`/genres/${props.id}`}>
+      <Link to={`/genres/${props.id}`} >
 
-      <button className="button2">
-
+      <button id= {props.name} className="button2 tint t5">
       <p>{props.name}</p>
-
      </button>
 
       </Link>
