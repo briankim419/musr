@@ -2,10 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Api::V1::AlbumsController, type: :controller do
 
-  before(:each) do
-    FactoryBot.create(:genre, name: "Rock")
-
-  end
+  let!(:rock_genre) { FactoryBot.create(:genre, name: "Rock") }
   let!(:first_album) { Album.create(name: "Suncity EP", artist: "Khalid", description: "description", release_date: "10/05/2018", genre_id: Genre.first.id, album_art: "https://albumart.com") }
 
   describe "GET#index" do
@@ -41,7 +38,6 @@ RSpec.describe Api::V1::AlbumsController, type: :controller do
 
       expect(returned_json["album"]["name"]).to eq "Suncity EP"
 
-
     end
   end
 
@@ -62,22 +58,31 @@ RSpec.describe Api::V1::AlbumsController, type: :controller do
 
   describe "POST#create" do
     it "creates a new album" do
-      post_json = { name: "Suncity EP", artist: "Khalid", description: "description", release_date: "10/05/2018", genre_id: Genre.first.id, album_art: "album_art.jpg" }.to_json
+
+      post_json = { album: {name: "Suncity EP", artist: "Khalid", description: "description", release_date: "10/05/2018", album_art: "album_art.jpg", genre_id: Genre.first.id}}
       prev_count = Album.count
-      post(:create, body: post_json)
+
+      post(:create, params: post_json)
+
       expect(Album.count).to eq(prev_count + 1)
     end
 
     it "returns the json of the newly posted album" do
-      post_json = { name: "Suncity EP", artist: "Khalid", description: "description", release_date: "10/05/2018", genre_id: Genre.first.id, album_art: "album_art.jpg" }.to_json
-      post(:create, body: post_json)
+      post_json = { album: {name: "Suncity EP", artist: "Khalid", description: "description", release_date: "10/05/2018", album_art: "album_art.jpg", genre_id: Genre.first.id}}
+
+      post(:create, params: post_json)
+
       returned_json = JSON.parse(response.body)
       expect(response.status).to eq 200
       expect(response.content_type).to eq("application/json")
 
       expect(returned_json).to be_kind_of(Hash)
       expect(returned_json).to_not be_kind_of(Array)
-      # expect(returned_json["name"]).to eq "Basset Hound Shakes Off"
+      expect(returned_json["album"]["name"]).to eq "Suncity EP"
+      expect(returned_json["album"]["artist"]).to eq "Khalid"
+      expect(returned_json["album"]["description"]).to eq "description"
+      expect(returned_json["album"]["release_date"]).to eq "2018-05-10"
+      expect(returned_json["album"]["album_art"]).to eq "album_art.jpg"
     end
   end
 end

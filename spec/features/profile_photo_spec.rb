@@ -5,7 +5,6 @@ feature "profile photo" do
     visit root_path
     click_link "Sign Up"
 
-
     fill_in "First Name", with: "Marshall"
     fill_in "Last Name", with: "Mathers"
     fill_in "User Name", with: "Eminem73"
