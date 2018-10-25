@@ -30,9 +30,15 @@ class AlbumShowContainer extends Component {
     .then(response => response.json())
     .then(body => {
       let fetchedAlbum = body.album
-      this.setState({ id: fetchedAlbum.id, name: fetchedAlbum.name, artist: fetchedAlbum.artist, description: fetchedAlbum.description, release_date: fetchedAlbum.release_date, genre: fetchedAlbum.genre, album_art: fetchedAlbum.album_art })
-
-    })
+      this.setState({
+        id: fetchedAlbum.id,
+        name: fetchedAlbum.name,
+        artist: fetchedAlbum.artist,
+        description: fetchedAlbum.description,
+        release_date: fetchedAlbum.release_date,
+        genre: fetchedAlbum.genre,
+        album_art: fetchedAlbum.album_art })
+      })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
