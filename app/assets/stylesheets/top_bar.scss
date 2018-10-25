@@ -1,0 +1,55 @@
+.top-bar{
+  background-color: #01BAEF;
+  color: #DB5461;
+  font-weight: bold;
+}
+.name{
+  color: #DB5461;
+  font-weight: bold;
+}
+.background-color {
+  background-color: #C0BCB5;
+  margin: auto;
+  
+}
+
+// .button {
+//   font-weight: bold;
+//    background-color: #DB5461;
+//    border: none;
+//    color: #2F2D2E;
+//    padding: 15px 32px;
+//    text-align: center;
+//    text-decoration: none;
+//    display: inline-block;
+//    font-size: 16px;
+//    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+//    -webkit-transition-duration: 0.4s; /* Safari */
+//    transition-duration: 0.4s;
+// }
+//
+// .button:hover {
+//    background-color: #01BAEF; /* Green */
+//    color: #2F2D2E;
+//
+// }
+.titleb {
+  font-style: bold;
+  font-weight: bold;
+  background-color: #01BAEF;
+  border: none;
+  color: #2F2D2E;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+}
+
+.titleb:hover {
+  background-color: #DB5461; /* Green */
+  color: #2F2D2E;
+
+  }

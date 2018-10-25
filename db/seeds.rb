@@ -18,6 +18,7 @@ genre_info = [
 genre_info.each do |genre|
   Genre.create(genre)
 end
+<<<<<<< HEAD
 Album.create(
   name:"Are You Experienced",
   description:"Are You Experienced is the debut studio album by English-American rock band the Jimi Hendrix Experience. Released in 1967, the LP was an immediate critical and commercial success, and it is widely regarded as one of the greatest debuts in the history of rock music.",
@@ -141,3 +142,5 @@ Album.create(
   release_date:"04/19/1994",
   genre_id:2
 )
+=======
+>>>>>>> 9f213e0a9394af84b706a21731746ad939d13f68

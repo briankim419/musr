@@ -144,7 +144,8 @@ class AlbumsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      browserHistory.push(`/genres/${this.state.genre_id}/albums/${body.album.id}`)
+      browserHistory.push(`/genres/${this.state.genre_id}`)
+      // /${body.album.id}
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
@@ -220,6 +221,14 @@ class AlbumsFormContainer extends Component {
               <p>Try dropping some files here, or click to select files to upload.</p>
             </Dropzone>
           </div>
+          <aside>
+            <h2>Selected Files:</h2>
+            <ul>
+              {
+                this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+              }
+            </ul>
+          </aside>
         </section>
 
         <input className="button" type="submit" value="Submit" />
