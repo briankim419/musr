@@ -3,7 +3,6 @@ class Api::V1::ReviewsController < ApplicationController
   # before_action :authenticate_user!, except: [:index, :show]
 
   def index
-
     render json: Album.find(params[:album_id]).reviews
   end
 
@@ -23,7 +22,7 @@ class Api::V1::ReviewsController < ApplicationController
     # UPDATE THIS TO USE STRONG PARAMS
 
     if review.save
-      render json: {review: review.album}, adapter: :json
+      render json: {review: review}, adapter: :json
     else
       render json: { error: review.errors.full_messages }, status: :unprocessable_entity
     end

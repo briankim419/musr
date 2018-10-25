@@ -17,18 +17,19 @@
  */
 
 i{
-  font-size: 50px;
+  font-size: 30px;
 }
 
 .reviews{
-  border: 2px solid black;
+  border-top:5px solid white;
+  border-bottom: 5px solid white;">
   width: 60%;
-  opacity: .4;
   margin: 5px;
-  background-color: white;
+  background-color: gray;
 }
 
 .reviews-content{
+  margin: 10px;
   text-align: left;
   color: black;
 }

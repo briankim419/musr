@@ -16,6 +16,7 @@ class ReviewsIndexContainer extends Component {
    this.setState({ reviews: newReviews })
   }
 
+/// ReviewsIndexContainer.js:35 Error in fetch: allReviews.map is not a function
   componentDidMount() {
     fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews`)
     .then(response => {
@@ -30,27 +31,30 @@ class ReviewsIndexContainer extends Component {
     .then(response => response.json())
     .then(fetchedReviews => {
       this.setState({ reviews: fetchedReviews.reviews})
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
     let allReviews = this.state.reviews
-    debugger
-    let reviewList = allReviews.map(review =>
-       <div className = "reviews">
-        <div className = "reviews-content">
-          <StarRatingComponent
-            name="app4"
-            editing={false}
-            starCount={5}
-            value={review.rating} />
-        <h1>{review.body}</h1>
-        <h1>{review.user.user_name}</h1>
+    let reviewList
+    console.log(this.state.reviews)
+    if (Array.isArray(allReviews) && allReviews.length != 0) {
+      reviewList = allReviews.map(review =>
+        <div className="reviews" key={review.id}>
+          <div className="reviews-content">
+            <StarRatingComponent
+              key={review.id}
+              name="app4"
+              editing={false}
+              starCount={5}
+              value={review.rating} />
+            <p>{review.user.user_name}</p>
+            <p>{review.body}</p>
+          </div>
         </div>
-       </div>
-     )
+      )
+    }
     return(
       <div>
         <ReviewsFormContainer

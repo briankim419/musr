@@ -79,36 +79,39 @@ class ReviewsFormContainer extends Component {
     event.preventDefault();
     if((this.validateBodyInput(this.state.body)) && (this.validateRatingInput(this.state.rating)) ) {
 
-    let body = new FormData()
-    body.append("body", this.state.body)
-    body.append("rating", this.state.rating)
+      let body = new FormData()
+      body.append("body", this.state.body)
+      body.append("rating", this.state.rating)
 
-    fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews`, {
-      credentials: 'same-origin',
-      method: 'POST',
-      body: body,
-      headers: {
-        'Accept': 'application/json' },
-        credentials: 'same-origin'
-    })
-    .then(response => {
-      if (response.ok) {
-        return response;
-      } else {
-        let errorMessage = `${response.status} (${response.statusText})`,
-            error = new Error(errorMessage);
-        throw(error);
-      }
-    })
-    .then(response => response.json())
-    .then(body => {
-      //  instead of the below, you want to add the `body.review` to the existing list in state
-      // Have a function in ReviewsIndexContainer called `addNewReview` that takes in a review and adds it (concat) to `this.state.reviews`
-      // Pass that function down as a prop to ReviewsFormContainer
-      // Call that function here:
       this.props.addNewReview({rating: this.state.rating, body: this.state.body})
-    })
-    .catch(error => console.error(`Error in fetch: ${error.message}`));
+      this.handleClearForm()
+
+
+      fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews`, {
+        credentials: 'same-origin',
+        method: 'POST',
+        body: body,
+        headers: {
+          'Accept': 'application/json' },
+          credentials: 'same-origin'
+      })
+      .then(response => {
+        if (response.ok) {
+          return response;
+        } else {
+          let errorMessage = `${response.status} (${response.statusText})`,
+              error = new Error(errorMessage);
+          throw(error);
+        }
+      })
+      .then(response => response.json())
+      .then(body => {
+        //  instead of the below, you want to add the `body.review` to the existing list in state
+        // Have a function in ReviewsIndexContainer called `addNewReview` that takes in a review and adds it (concat) to `this.state.reviews`
+        // Pass that function down as a prop to ReviewsFormContainer
+        // Call that function here:
+      })
+      .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
   }
 
