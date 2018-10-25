@@ -7,5 +7,6 @@ class Album < ApplicationRecord
   validates :release_date, presence: true
 
   belongs_to :genre
+  has_many :reviews
 
 end

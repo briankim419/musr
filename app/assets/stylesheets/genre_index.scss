@@ -1,6 +1,7 @@
 .container{
   text-align: center;
   align-items: center;
+  box-sizing: border-box
 }
 
 // .columns {
@@ -60,6 +61,9 @@
 .text{
   font-weight: bold;
   font-size: 16px;
+}
+.titlePadding {
+  margin-bottom: 10px;
 }
 .columnss{
   margin: auto;

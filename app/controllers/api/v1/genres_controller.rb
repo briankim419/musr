@@ -1,4 +1,5 @@
 class Api::V1::GenresController < ApplicationController
+  # before_action :authenticate_user!, except: [:index, :show]
   def index
 
     render json: Genre.all
@@ -10,8 +11,18 @@ class Api::V1::GenresController < ApplicationController
   end
 
   def create
-    data = JSON.parse(request.body.read)
-    new_genre = Genre.create(name: data["name"])
-    render json: new_genre, adapter: :json
+    if current_user
+      data = JSON.parse(request.body.read)
+      new_genre = Genre.create(name: data["name"])
+      render json: new_genre, adapter: :json
+    else
+      render json: { error: 'You must be logged in to create a genre' }, status: :unprocessable_entity
+    end
   end
+
+  def authorize_user
+  if !user_signed_in? || !current_user.admin?
+    raise ActionController::RoutingError.new("Not Found")
+  end
+end
 end

@@ -123,7 +123,7 @@ class AlbumsFormContainer extends Component {
     body.append("artist", this.state.artist)
     body.append("description", this.state.description)
     body.append("genre_id", this.state.genre_id)
-    body.append("albumart", this.state.file[0])
+    body.append("album_art", this.state.file[0])
 
     fetch(`/api/v1/albums`, {
       credentials: 'same-origin',
@@ -144,7 +144,8 @@ class AlbumsFormContainer extends Component {
     })
     .then(response => response.json())
     .then(body => {
-      browserHistory.push(`/genres/${this.state.genre_id}/albums/${body.album.id}`)
+      browserHistory.push(`/genres/${this.state.genre_id}`)
+      // /${body.album.id}
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
     }
@@ -171,14 +172,14 @@ class AlbumsFormContainer extends Component {
 
 
     return(
-      <div className="test ">
-      <h1 className="center"> New Album</h1>
+      <div className=" center ">
+      <h1 className="center "> New Album</h1>
 
 
-      <div className="small-11 large10 columnss">{errorDiv}
+      <div className="small-11 large10 columns wrapperform">{errorDiv}
       <form onSubmit={this.handleSubmit}>
-        <label>Album Name</label>
-        <div className="field">
+        <label className="floatL formtext">Album Name</label>
+        <div className="field  ">
         <input
           name='name'
           type = 'text'
@@ -186,7 +187,7 @@ class AlbumsFormContainer extends Component {
           onChange={this.handleChange}
         />
         </div>
-      <label>Release Date</label>
+      <label className="floatL formtext">Release Date</label>
       <div className="field">
       <input
           label='Release Date:'
@@ -196,7 +197,7 @@ class AlbumsFormContainer extends Component {
           onChange={this.handleChange}
         />
         </div>
-      <label>Artist</label>
+      <label className="floatL formtext">Artist</label>
       <div className="field">
       <input
           label='Artist:'
@@ -206,7 +207,7 @@ class AlbumsFormContainer extends Component {
           onChange={this.handleChange}
         />
         </div>
-      <label>Description</label>
+      <label className="floatL formtext">Description</label>
       <div className="field">
       <input
         label='Description:'
@@ -216,11 +217,14 @@ class AlbumsFormContainer extends Component {
         onChange={this.handleChange}
         />
         </div>
-      <label>Genre</label>
+        <br></br>
+        <br></br>
+        <br></br>
+      <label className="floatL formtext">Genre</label>
       <div className="field">
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
           <input type="radio" value="1" name="genre_id"/> Rock
-          <input type="radio" value="2" name="genre_id"/> Hip Hop/R&B
+          <input type="radio" value="2" name="genre_id"/> Hip-Hop
           <input type="radio" value="3" name="genre_id"/> Country
           <input type="radio" value="4" name="genre_id"/> Electronic
           <input type="radio" value="5" name="genre_id"/> Jazz
@@ -228,14 +232,26 @@ class AlbumsFormContainer extends Component {
         </div>
         </div>
 
-        <section>
-          <div className="dropzone ">
+        <section className="">
+
+          <div className="dropzone container" name = 'album_art'>
             <Dropzone onDrop={this.onDrop}>
               <p>Try dropping some files here, or click to select files to upload.</p>
             </Dropzone>
           </div>
+
           </section>
           <div className="center">
+
+          <aside>
+            <h2 className="center">Selected Files:</h2>
+            <ul>
+              {
+                this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
+              }
+            </ul>
+          </aside>
+
         <input className="button" type="submit" value="Submit" />
         </div>
 
