@@ -8,7 +8,7 @@ xdescribe('GenreShowContainer', () => {
 
   beforeEach(() => {
     genre = {id: 1, name: 'Rock'}
-    albums = {id: 1, name: 'Test Album', artist: "Dr. Test", release_date: "04/04/2017", genre_id: genre.id}
+    albums = {albums: [{id: 1, name: 'Test Album', artist: "Dr. Test", release_date: "04/04/2017", genre_id: genre.id}]}
     fetchMock.get(`/api/v1/genres/${genre.id}`, {
       status: 200,
       body: genre
