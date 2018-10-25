@@ -3,6 +3,7 @@ import AlbumsFormContainer from './AlbumsFormContainer';
 import AlbumsIndex from '../components/AlbumsIndex';
 import TextInputField from '../components/TextInputField';
 import { Link } from 'react-router'
+import AlbumTile from '../components/AlbumTile'
 
 class AlbumsContainer extends Component {
   constructor(props) {
@@ -43,10 +44,16 @@ class AlbumsContainer extends Component {
   }
 
   render() {
-     // let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
-
+     let albums = this.state.albums.map(album => {
+       return(
+         <AlbumTile
+           key={album.id}
+           album={album}
+         />
+       )
+     })
     return(
-      <div>
+      <div className="test">
         <AlbumsIndex
           albums = {this.state.albums}
         />

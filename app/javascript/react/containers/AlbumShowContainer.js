@@ -6,6 +6,8 @@ class AlbumShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
+      album: {},
       id:"",
       name:"",
       artist:"",
@@ -15,11 +17,9 @@ class AlbumShowContainer extends Component {
       album_art:"",
       error: "",
       reviews: []
+
     }
   }
-
-
-  // postNewReview
 
   componentDidMount() {
     fetch(`/api/v1/genres/${this.props.params.genre_id}/albums/${this.props.params.id}`)
@@ -40,7 +40,6 @@ class AlbumShowContainer extends Component {
         let fetchedAlbum = body.album
         this.setState({ id: fetchedAlbum.id, name: fetchedAlbum.name, artist: fetchedAlbum.artist, description: fetchedAlbum.description, release_date: fetchedAlbum.release_date, genre: fetchedAlbum.genre, album_art: fetchedAlbum.album_art })
       }
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -50,7 +49,6 @@ class AlbumShowContainer extends Component {
   render(){
 
     let output;
-
     let yourErrorDiv = this.state.error
 
     if(this.state.error) {
@@ -64,7 +62,7 @@ class AlbumShowContainer extends Component {
         description={this.state.description}
         release_date={this.state.release_date}
         genre={this.state.genre}
-        album_art={this.state.album_art.url}
+        album_art={this.state.album_art}
         />
     }
 

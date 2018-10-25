@@ -22,7 +22,7 @@ const AlbumShow = (props) => {
       </div>
 
 
-        <div className="album-name-description large-6 columns">
+        <div className="album-name-description large-6 columns test">
 
           <div className="album-name">
             {props.name}

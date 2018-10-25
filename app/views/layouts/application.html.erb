@@ -31,6 +31,7 @@
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
       <% end %>
     </ul>
+
     </section>
     <!-- <ul class="right">
       <%- if current_user -%>
@@ -52,8 +53,10 @@
     <%- end -%>
     <a href="#" class="close">&times;</a>
   </div>
+  <div class="center row testALL">
+    <%= yield %>
+  </div>
 
-  <%= yield %>
 
   <%= javascript_include_tag 'application' %>
 

@@ -1,46 +1,55 @@
 .container{
   text-align: center;
   align-items: center;
+  box-sizing: border-box
 }
 
-
-// .tiles{
-//   align-items: center;
-//   border-style: solid;
-//   border-width: 4px;
-//   text-align: center;
-//   background-color: #8D3B72;
-//   border-radius: 15px;
-//   padding-top: 12px;
-//   border-spacing: 15px;
+// .columns {
+//   padding: none;
 // }
-// .tilesopacity {
-//   background-color: rgba(141, 59, 114, 0.6);
-//   //hexcode to decimal converter was used, 8D3B72
-//
-// }
+#Jazz {
+  background-image: url(jazzGenre.jpg);
+}
+#Classical {
+  background-image: url(classicalGenre.jpg);
+}
+#Electronic {
+  background-image: url(electronicGenre.jpg);
+}
+#Country {
+  background-image: url(countryGenre.jpg);
+}
+#Hip-Hop {
+  background-image: url(rapGenre.jpg);
+}
 
+#Rock {
+  background-image: url(rockGenre.jpg);
+}
 .button2 {
   font-weight: bold;
-  background-color: #8D3B72;
-  // background-color: rgba(141, 59, 114, 0.6);
+  // background-color: #8D3B72;
+  background-size: cover;
+  background-repeat: no-repeat;
+
   border: none;
-  color: #2F2D2E;
+  color: white;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: 10px;
   box-shadow: 0 9px #999;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  width: 125%;
-  height: 100%;
+  width: 100%;
+  height: 350px;
+
 }
 
 .button2:hover {
   background-color: #01BAEF;
-  color: #2F2D2E;
+  color: #DB5461;
 
 }
 .button2:active {
@@ -53,22 +62,51 @@
   font-weight: bold;
   font-size: 16px;
 }
+.titlePadding {
+  margin-bottom: 10px;
+}
 .columnss{
   margin: auto;
 }
 .columns{
-  align-items: center;
-  // margin: auto;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
-  text-align: center;
+ box-sizing: border-box
 }
 
-#ap{
-  float: left;
+.tint {
+  position: sticky;
+  // float: left;
+  margin: auto;
+  // margin-right: inherit;
+  // margin-bottom: inherit;
+  margin-bottom: 20px;
+  cursor: pointer;
+  // box-shadow: rgba(0,0,0,.4) 3px 8px 8px;
+
 }
+
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+
+}
+
+.tint:hover:before { background: none; }
+
+.t2:before { background: rgba(0,0,255, 0.5); }
+.t3:before { background: rgba(255,0,0, 0.5); }
+.t4:before { background: rgba(0,255,0, 0.5); }
+.t5:before { background: rgba(255,0,240, 0.5); }
+.t6:before { background: rgba(1,186,239, 0.5); }
+// #ap{
+//   float: left;
+// }
 
 .albumtilebutton {
   font-weight: bold;
