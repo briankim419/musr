@@ -137,7 +137,7 @@ class ReviewsFormContainer extends Component {
     return(
       <div>{errorDiv}
         <form onSubmit={this.handleSubmit}>
-          <h2>Rating: {rating}</h2>
+          <h3 className="ratingtitle">Rating: {rating}</h3>
            <StarRatingComponent
              name="rate1"
              starCount={5}
@@ -145,15 +145,16 @@ class ReviewsFormContainer extends Component {
              onStarClick={this.onStarClick.bind(this)}
              onStarClickHalfStar={this.onStarClickHalfStar.bind(this)}
            />
-
-         <label>Body</label>
+<div className="reviewtile">
+         <label className="reviewfont">What are your opinions on this album?</label>
          <input
            name='body'
            type = 'textarea'
-           style={{ height: 200, width: 1000 }}
            value={this.state.body}
+           style={{ height: 200, width: 650 }}
            onChange={this.handleChange}
          />
+         </div>
         <input className="button" type="submit" value="Submit" />
         </form>
 
