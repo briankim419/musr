@@ -2,6 +2,7 @@
   text-align: center;
   align-items: center;
   padding: 10px;
+  color: white;
 }
 input[type="submit"] {
   font-weight: bold;
@@ -16,7 +17,7 @@ input[type="submit"] {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-
+margin-top: 20px;
 }
 input[type="submit"]:hover {
    background-color: #01BAEF;
@@ -26,6 +27,6 @@ input[type="submit"]:hover {
 
 input[type="submit"]:active {
   background-color: #3e8e41;
-  box-shadow: 0 5px #666;
+  box-shadow: 0 5px #665;
   transform: translateY(4px);
 }

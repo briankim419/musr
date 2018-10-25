@@ -6,6 +6,8 @@ class AlbumShowContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
+      album: {},
       id:"",
       name:"",
       artist:"",
@@ -15,6 +17,7 @@ class AlbumShowContainer extends Component {
       album_art:"",
       error: "",
       reviews: []
+
     }
   }
 
@@ -40,7 +43,6 @@ class AlbumShowContainer extends Component {
         let fetchedAlbum = body.album
         this.setState({ id: fetchedAlbum.id, name: fetchedAlbum.name, artist: fetchedAlbum.artist, description: fetchedAlbum.description, release_date: fetchedAlbum.release_date, genre: fetchedAlbum.genre, album_art: fetchedAlbum.album_art })
       }
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -48,13 +50,8 @@ class AlbumShowContainer extends Component {
 
 
   render(){
-<<<<<<< HEAD
-    return(
-      <AlbumShow
-=======
-
+    
     let output;
-
     let yourErrorDiv = this.state.error
 
     if(this.state.error) {
@@ -62,7 +59,6 @@ class AlbumShowContainer extends Component {
 
     } else {
       output = <AlbumShow
->>>>>>> 9f213e0a9394af84b706a21731746ad939d13f68
         id={this.state.id}
         name={this.state.name}
         artist={this.state.artist}

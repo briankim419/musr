@@ -18,7 +18,6 @@ genre_info = [
 genre_info.each do |genre|
   Genre.create(genre)
 end
-<<<<<<< HEAD
 Album.create(
   name:"Are You Experienced",
   description:"Are You Experienced is the debut studio album by English-American rock band the Jimi Hendrix Experience. Released in 1967, the LP was an immediate critical and commercial success, and it is widely regarded as one of the greatest debuts in the history of rock music.",
@@ -116,9 +115,17 @@ Album.create(
 
 Album.create(
   name:"Kind of Blue",
-  description:"",
+  description:"Kind of Blue has been regarded by many critics as the greatest jazz record, Davis's masterpiece, and one of the best albums of all time. Its influence on music, including jazz, rock, and classical genres, has led writers to also deem it one of the most influential albums ever recorded.",
   artist:"Miles Davis",
   release_date:"08/17/1959",
+  genre_id:5
+)
+
+Album.create(
+  name:"Blue Train",
+  description:"",
+  artist:"John Coltrane",
+  release_date:"02/02/1958",
   genre_id:2
 )
 Album.create(
@@ -135,12 +142,3 @@ Album.create(
   release_date:"04/19/1994",
   genre_id:2
 )
-Album.create(
-  name:"Illmatic",
-  description:"",
-  artist:"Nas",
-  release_date:"04/19/1994",
-  genre_id:2
-)
-=======
->>>>>>> 9f213e0a9394af84b706a21731746ad939d13f68

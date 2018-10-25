@@ -172,16 +172,23 @@ class AlbumsFormContainer extends Component {
 
 
     return(
-      <div>{errorDiv}
+      <div className=" center ">
+      <h1 className="center "> New Album</h1>
+
+
+      <div className="small-11 large10 columns wrapperform">{errorDiv}
       <form onSubmit={this.handleSubmit}>
-        <label>Album Name</label>
+        <label className="floatL formtext">Album Name</label>
+        <div className="field  ">
         <input
           name='name'
           type = 'text'
           value={this.state.name}
           onChange={this.handleChange}
         />
-      <label>Release Date</label>
+        </div>
+      <label className="floatL formtext">Release Date</label>
+      <div className="field">
       <input
           label='Release Date:'
             type = 'date'
@@ -189,7 +196,9 @@ class AlbumsFormContainer extends Component {
           value={this.state.release_date}
           onChange={this.handleChange}
         />
-      <label>Artist</label>
+        </div>
+      <label className="floatL formtext">Artist</label>
+      <div className="field">
       <input
           label='Artist:'
           name='artist'
@@ -197,7 +206,9 @@ class AlbumsFormContainer extends Component {
           value={this.state.artist}
           onChange={this.handleChange}
         />
-      <label>Description</label>
+        </div>
+      <label className="floatL formtext">Description</label>
+      <div className="field">
       <input
         label='Description:'
         type = 'text'
@@ -205,35 +216,49 @@ class AlbumsFormContainer extends Component {
         value={this.state.description}
         onChange={this.handleChange}
         />
-      <label>Genre</label>
+        </div>
+        <br></br>
+        <br></br>
+        <br></br>
+      <label className="floatL formtext">Genre</label>
+      <div className="field">
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
           <input type="radio" value="1" name="genre_id"/> Rock
-          <input type="radio" value="2" name="genre_id"/> Hip Hop/R&B
+          <input type="radio" value="2" name="genre_id"/> Hip-Hop
           <input type="radio" value="3" name="genre_id"/> Country
           <input type="radio" value="4" name="genre_id"/> Electronic
           <input type="radio" value="5" name="genre_id"/> Jazz
           <input type="radio" value="6" name="genre_id"/> Classical
         </div>
+        </div>
 
-        <section>
-          <div className="dropzone" name = 'album_art'>
+        <section className="">
+
+          <div className="dropzone container" name = 'album_art'>
             <Dropzone onDrop={this.onDrop}>
               <p>Try dropping some files here, or click to select files to upload.</p>
             </Dropzone>
           </div>
+
+          </section>
+          <div className="center">
+
           <aside>
-            <h2>Selected Files:</h2>
+            <h2 className="center">Selected Files:</h2>
             <ul>
               {
                 this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
               }
             </ul>
           </aside>
-        </section>
 
         <input className="button" type="submit" value="Submit" />
+        </div>
+
       </form>
       </div>
+      </div>
+
     )
   }
 };
