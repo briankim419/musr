@@ -155,7 +155,7 @@ class AlbumsFormContainer extends Component {
     if(file.length == 1) {
       this.setState({ file: file })
     } else {
-      this.setState({ message: 'You can only upload one photo per board game.'})
+      this.setState({ message: 'You can only upload one photo per album.'})
     }
   }
 
@@ -172,11 +172,11 @@ class AlbumsFormContainer extends Component {
 
 
     return(
-      <div className=" center ">
+      <div className="  ">
       <h1 className="center "> New Album</h1>
 
 
-      <div className="small-11 large10 columns wrapperform">{errorDiv}
+      <div className="small-11 large-centered columns wrapperform">{errorDiv}
       <form onSubmit={this.handleSubmit}>
         <label className="floatL formtext">Album Name</label>
         <div className="field  ">
@@ -220,10 +220,13 @@ class AlbumsFormContainer extends Component {
         <br></br>
         <br></br>
         <br></br>
+        <br></br>
       <label className="floatL formtext">Genre</label>
-      <div className="field">
+      <div className="field ">
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
           <input type="radio" value="1" name="genre_id"/> Rock
+          <br></br>
+
           <input type="radio" value="2" name="genre_id"/> Hip-Hop
           <input type="radio" value="3" name="genre_id"/> Country
           <input type="radio" value="4" name="genre_id"/> Electronic
@@ -232,7 +235,7 @@ class AlbumsFormContainer extends Component {
         </div>
         </div>
 
-        <section className="">
+        <section className="imgalign">
 
           <div className="dropzone container" name = 'album_art'>
             <Dropzone onDrop={this.onDrop}>
@@ -244,6 +247,7 @@ class AlbumsFormContainer extends Component {
           <div className="center">
 
           <aside>
+
             <h2 className="center">Selected Files:</h2>
             <ul>
               {

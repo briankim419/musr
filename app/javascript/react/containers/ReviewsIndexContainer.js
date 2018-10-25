@@ -49,7 +49,6 @@ class ReviewsIndexContainer extends Component {
               editing={false}
               starCount={5}
               value={review.rating} />
-            <p>{review.user.user_name}</p>
             <p>{review.body}</p>
           </div>
         </div>

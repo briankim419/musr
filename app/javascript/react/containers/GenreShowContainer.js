@@ -36,7 +36,7 @@ class GenreShowContainer extends Component {
     return(
 
       <div className="center " >
-        <h1>{this.state.genre.name}</h1>
+        <h1 className="center">{this.state.genre.name}</h1>
 
         <AlbumsContainer
 

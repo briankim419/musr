@@ -7,7 +7,19 @@
   // float: left;
 
 }
-
+.artist {
+  margin-left: 15px;
+}
+.release_date {
+  margin-left: 15px;
+}
+.album_art {
+  margin-top: 25px;
+  margin-left: 15px;
+  margin-bottom: 20px;
+  height: 400px;
+  width: 400px;
+}
 .album-artist-release_date {
   text-align: left;
 }
@@ -19,13 +31,67 @@
   width: inherit;
   text-align: center;
   padding: 4px;
-  margin: 20px;
-  margin-bottom: 40px;
+  margin: auto;
 }
 
 .album-description {
   margin: 20px;
+  color: black;
+  text-align: left;
 }
+
+.album-description-tile {
+  background-color: #F6F7EB;
+  width: 80%;
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-bottom: 30px;
+  padding-top: 30px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  padding-left: 30px;
+  padding-right: 30px;
+  -webkit-transition-duration: 8.4s;
+  transition-duration: 8.4s;
+
+}
+.album-description-tile {
+  cursor: pointer;
+}
+
+
+.album-description-tile:hover {
+
+  background: linear-gradient(123deg, #f6f7eb, #f71735);
+  background-size: 400% 400%;
+
+  -webkit-animation: AnimationName 37s ease infinite;
+  -moz-animation: AnimationName 37s ease infinite;
+  animation: AnimationName 37s ease infinite;
+}
+  @-webkit-keyframes AnimationName {
+      0%{background-position:0% 10%}
+      50%{background-position:100% 91%}
+      100%{background-position:0% 10%}
+  }
+  @-moz-keyframes AnimationName {
+      0%{background-position:0% 10%}
+      50%{background-position:100% 91%}
+      100%{background-position:0% 10%}
+  }
+  @keyframes AnimationName {
+      0%{background-position:0% 10%}
+      50%{background-position:100% 91%}
+      100%{background-position:0% 10%}
+  }
+
+
+
+
+
+
+
+
+
 
 .album-name {
   // text-align: center;

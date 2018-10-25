@@ -21,11 +21,11 @@ i{
 }
 
 .reviews{
-  border-top:5px solid white;
-  border-bottom: 5px solid white;">
+  border-top:5px solid black;
+  border-bottom: 5px solid black;">
   width: 60%;
   margin: 5px;
-  background-color: gray;
+  background-color: white;
 }
 
 .reviews-content{

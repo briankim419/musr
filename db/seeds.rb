@@ -26,9 +26,7 @@ Album.create(
   release_date:"23/08/1967",
   genre_id:1,
   album_art: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/13/511p5QqAyEL._SS500.jpg"
-
 )
-
 Album.create(
   name:"Back in Black",
   description:"Back in Black is the seventh studio album by Australian rock band AC/DC.  Lead singer Bon Scott died in February 1980, after recording for Back in Black had already started. Instead of disbanding, the group decided to continue on with new vocalist Brian Johnson.",
