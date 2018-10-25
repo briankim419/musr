@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AlbumsContainer from './AlbumsContainer'
 import ReviewsFormContainer from './ReviewsFormContainer'
+import StarRatingComponent from 'react-star-rating-component';
 
 class ReviewsIndexContainer extends Component {
   constructor(props) {
@@ -8,39 +9,11 @@ class ReviewsIndexContainer extends Component {
     this.state = {
       reviews: []
     }
-    this.handleUpClick = this.handleUpClick.bind(this);
-    this.handleDownClick = this.handleDownClick.bind(this);
     this.addNewReview = this.addNewReview.bind(this);
   }
   addNewReview(reviewPayload) {
    let newReviews = this.state.reviews.concat(reviewPayload)
    this.setState({ reviews: newReviews })
-  }
-
-  handleUpClick(event) {
-    event.preventDefault();
-    let upVote = this.state.votes
-    upVote++
-    this.setState({ votes: upVote })
-    let formPayload = {
-      votes: this.state.votes
-    };
-    fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews/1/edit`, {
-      credentials: 'same-origin',
-      method: 'EDIT',
-      body: (formPayload),
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      }
-    })
-  }
-
-  handleDownClick(event) {
-    event.preventDefault();
-    let upVote = this.state.votes
-    upVote--
-    this.setState({ votes: upVote })
   }
 
   componentDidMount() {
@@ -56,17 +29,28 @@ class ReviewsIndexContainer extends Component {
     })
     .then(response => response.json())
     .then(fetchedReviews => {
-      this.setState({ reviews: fetchedReviews})
+      this.setState({ reviews: fetchedReviews.reviews})
 
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
-
-
   render(){
     let allReviews = this.state.reviews
-    let reviewList = allReviews.map(review => <div><h1>{review.body}</h1><h2>{review.rating}</h2></div>)
+    debugger
+    let reviewList = allReviews.map(review =>
+       <div className = "reviews">
+        <div className = "reviews-content">
+          <StarRatingComponent
+            name="app4"
+            editing={false}
+            starCount={5}
+            value={review.rating} />
+        <h1>{review.body}</h1>
+        <h1>{review.user.user_name}</h1>
+        </div>
+       </div>
+     )
     return(
       <div>
         <ReviewsFormContainer

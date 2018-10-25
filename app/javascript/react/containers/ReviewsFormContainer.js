@@ -6,6 +6,7 @@ import { browserHistory } from 'react-router'
 import StarRatingComponent from 'react-star-rating-component';
 
 
+
 class ReviewsFormContainer extends Component {
   constructor(props) {
     super(props);
@@ -15,7 +16,7 @@ class ReviewsFormContainer extends Component {
       body: '',
       votes: '',
       errors: {},
-      rating_half_star: 3.5
+
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -24,24 +25,13 @@ class ReviewsFormContainer extends Component {
     this.validateBodyInput = this.validateBodyInput.bind(this);
     this.validateRatingInput = this.validateRatingInput.bind(this);
     this.onStarClick = this.onStarClick.bind(this);
-    this.onStarClickHalfStar = this.onStarClickHalfStar.bind(this);
+
   }
 
-    onStarClick(nextValue, prevValue, name) {
-    this.setState({rating: nextValue});
-      }
-
-    onStarClickHalfStar(nextValue, prevValue, name, e) {
-      const xPos = (e.pageX - e.currentTarget.getBoundingClientRect().left) / e.currentTarget.offsetWidth;
-
-      if (xPos <= 0.5) {
-        nextValue -= 0.5;
-      }
-
-      console.log('name: %s, nextValue: %s, prevValue: %s', name, nextValue, prevValue);
-      // console.log(e);
-      this.setState({rating_half_star: nextValue});
+  onStarClick(nextValue, prevValue, name) {
+  this.setState({rating: nextValue});
     }
+
 
   validateBodyInput(input) {
       if (input.trim() === '') {
@@ -69,7 +59,6 @@ class ReviewsFormContainer extends Component {
       }
     }
 
-
   handleChange(event) {
     let value = event.target.value
     let name = event.target.name
@@ -83,6 +72,7 @@ class ReviewsFormContainer extends Component {
       votes: ''
     })
   };
+
 
   handleSubmit(event) {
 
@@ -138,13 +128,14 @@ class ReviewsFormContainer extends Component {
       <div>{errorDiv}
         <form onSubmit={this.handleSubmit}>
           <h2>Rating: {rating}</h2>
+          <div style={{fontSize: 18}} className = "stars">
            <StarRatingComponent
              name="rate1"
              starCount={5}
              value={rating}
              onStarClick={this.onStarClick.bind(this)}
-             onStarClickHalfStar={this.onStarClickHalfStar.bind(this)}
            />
+          </div>
 
          <label>Body</label>
          <input
@@ -156,7 +147,6 @@ class ReviewsFormContainer extends Component {
          />
         <input className="button" type="submit" value="Submit" />
         </form>
-
       </div>
     )
   }

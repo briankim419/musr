@@ -10,7 +10,6 @@ import AlbumShowContainer from '../containers/AlbumShowContainer'
 import ReviewsFormContainer from '../containers/ReviewsFormContainer'
 
 
-
 export const App = (props) => {
   return (
     <Router history={browserHistory}>
