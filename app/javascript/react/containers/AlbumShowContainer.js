@@ -21,9 +21,6 @@ class AlbumShowContainer extends Component {
     }
   }
 
-
-  // postNewReview
-
   componentDidMount() {
     fetch(`/api/v1/genres/${this.props.params.genre_id}/albums/${this.props.params.id}`)
     .then(response => {
@@ -50,7 +47,7 @@ class AlbumShowContainer extends Component {
 
 
   render(){
-    
+
     let output;
     let yourErrorDiv = this.state.error
 
