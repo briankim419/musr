@@ -65,7 +65,7 @@ class AlbumShowContainer extends Component {
 
 
 
-  render(){
+  render() {
     let output;
 
     let yourErrorDiv = this.state.error

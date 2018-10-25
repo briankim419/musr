@@ -10,8 +10,7 @@ class Api::V1::AlbumsController < ApplicationController
 
   def show
     album = Album.find(params[:id])
-    binding.pry
-    if album.genre.id == params[:genre_id]
+    if album.genre.id == params[:genre_id].to_i
       render json: album
     else
       render json: {error: "Album does not exist"}
