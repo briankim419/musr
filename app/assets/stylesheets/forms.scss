@@ -27,9 +27,11 @@
 .field:hover {
     background-color: #01BAEF;
 }
-
+.floatL {
+  text-align: left;
+}
 .test {
-  background-color: #6BF178;
+  background-color: #F6F7EB;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
@@ -38,7 +40,7 @@
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .testALL {
-  background-color: #61707D;
+  background-color: #2B3A67;
   width: 50%;
   margin-left: 25%;
   margin-right: 25%;
@@ -57,3 +59,25 @@
   padding: inherit;
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
+// background: linear-gradient(31deg, rgba(219,84,97, 0.5), rgba(17,101,182, 0.5));
+// background-size: 200% 200%;
+//
+// -webkit-animation: AnimationName 8s ease infinite;
+// -moz-animation: AnimationName 8s ease infinite;
+// animation: AnimationName 8s ease infinite;
+// }
+// @-webkit-keyframes AnimationName {
+//     0%{background-position:20% 0%}
+//     50%{background-position:81% 100%}
+//     100%{background-position:20% 0%}
+// }
+// @-moz-keyframes AnimationName {
+//     0%{background-position:20% 0%}
+//     50%{background-position:81% 100%}
+//     100%{background-position:20% 0%}
+// }
+// @keyframes AnimationName {
+//     0%{background-position:20% 0%}
+//     50%{background-position:81% 100%}
+//     100%{background-position:20% 0%}
+// }

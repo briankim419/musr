@@ -3,6 +3,9 @@
   align-items: center;
 }
 
+// .columns {
+//   padding: none;
+// }
 #Jazz {
   background-image: url(jazzGenre.jpg);
 }
@@ -38,8 +41,8 @@
   box-shadow: 0 9px #999;
   -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
-  width: 250px;
-  height: 400px;
+  width: 100%;
+  height: 350px;
 
 }
 
@@ -61,6 +64,10 @@
 .columnss{
   margin: auto;
 }
+.columns{
+ box-sizing: border-box
+}
+
 .tint {
   position: sticky;
   // float: left;
@@ -69,7 +76,8 @@
   // margin-bottom: inherit;
   margin-bottom: 20px;
   cursor: pointer;
-  box-shadow: rgba(0,0,0,.4) 3px 8px 8px;
+  // box-shadow: rgba(0,0,0,.4) 3px 8px 8px;
+
 }
 
 .tint:before {
@@ -91,7 +99,7 @@
 .t3:before { background: rgba(255,0,0, 0.5); }
 .t4:before { background: rgba(0,255,0, 0.5); }
 .t5:before { background: rgba(255,0,240, 0.5); }
-.t6:before { background: rgba(255,102,0, 0.6); }
+.t6:before { background: rgba(1,186,239, 0.5); }
 // #ap{
 //   float: left;
 // }

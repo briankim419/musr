@@ -1,5 +1,7 @@
 .top-bar{
   background-color: #01BAEF;
+  // background: rgba(255,0,240, .5);
+  padding-bottom: 10px;
   color: #DB5461;
   font-weight: bold;
 }
@@ -8,18 +10,28 @@
   font-weight: bold;
 }
 .background-color {
-  background-color: white;
+  background: linear-gradient(316deg, #2b3a67, #f71735);
+background-size: 200% 200%;
 
-
+-webkit-animation: AnimationName 18s ease infinite;
+-moz-animation: AnimationName 18s ease infinite;
+animation: AnimationName 18s ease infinite;
 }
-
-.background-layer {
-  background-color: #2F2D2E;
-  width: 50%;
-  margin-left: 25%;
-  margin-right: 25%;
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
 }
-
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
 
 // .button {
 //   font-weight: bold;
@@ -45,6 +57,7 @@
   font-style: bold;
   font-weight: bold;
   background-color: #01BAEF;
+  // background: rgba(255,0,240, .5);
   border: none;
   color: #2F2D2E;
   padding: 15px 32px;
@@ -63,7 +76,7 @@
   }
 
 .newspaper {
-  column-count:2;
-  -moz-column-count:2;
-  -webkit-column-count:2;
+  column-count:3;
+  -moz-column-count:3;
+  -webkit-column-count:3;
 }
