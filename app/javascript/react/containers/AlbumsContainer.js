@@ -53,7 +53,7 @@ class AlbumsContainer extends Component {
        )
      })
     return(
-      <div className="test wrapperform2 columnss">
+      <div className="test columnss">
         <AlbumsIndex
           albums = {this.state.albums}
         />

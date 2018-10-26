@@ -4,9 +4,6 @@
   box-sizing: border-box
 }
 
-// .columns {
-//   padding: none;
-// }
 #Jazz {
   background-image: url(jazzGenre.jpg);
 }
@@ -74,14 +71,9 @@
 
 .tint {
   position: sticky;
-  // float: left;
   margin: auto;
-  // margin-right: inherit;
-  // margin-bottom: inherit;
   margin-bottom: 20px;
   cursor: pointer;
-  // box-shadow: rgba(0,0,0,.4) 3px 8px 8px;
-
 }
 
 .tint:before {
@@ -104,14 +96,10 @@
 .t4:before { background: rgba(0,255,0, 0.5); }
 .t5:before { background: rgba(255,0,240, 0.5); }
 .t6:before { background: rgba(1,186,239, 0.5); }
-// #ap{
-//   float: left;
-// }
 
 .albumtilebutton {
   font-weight: bold;
   background-color: #8D3B72;
-  // background-color: rgba(141, 59, 114, 0.6);
   border: none;
   color: #2F2D2E;
   padding: 15px 32px;
@@ -125,6 +113,7 @@
   width: 75%;
   height: 75%;
   margin: 4px;
+  margin-bottom: 20px;
 }
 
 .albumtilebutton:hover {
