@@ -1,10 +1,12 @@
 .top-bar{
   background-color: #01BAEF;
-  // background: rgba(255,0,240, .5);
   padding-bottom: 10px;
   color: #DB5461;
   font-weight: bold;
   margin-bottom: 30px;
+}
+.title-font{
+  font-style: impact;
 }
 .name{
   color: #DB5461;
@@ -12,7 +14,7 @@
 }
 .background-color {
   background: linear-gradient(316deg, #2b3a67, #f71735);
-background-size: 200% 200%;
+background-size: 200% 400%;
 
 -webkit-animation: AnimationName 18s ease infinite;
 -moz-animation: AnimationName 18s ease infinite;
@@ -34,31 +36,10 @@ animation: AnimationName 18s ease infinite;
     100%{background-position:0% 50%}
 }
 
-// .button {
-//   font-weight: bold;
-//    background-color: #DB5461;
-//    border: none;
-//    color: #2F2D2E;
-//    padding: 15px 32px;
-//    text-align: center;
-//    text-decoration: none;
-//    display: inline-block;
-//    font-size: 16px;
-//    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-//    -webkit-transition-duration: 0.4s; /* Safari */
-//    transition-duration: 0.4s;
-// }
-//
-// .button:hover {
-//    background-color: #01BAEF; /* Green */
-//    color: #2F2D2E;
-//
-// }
 .titleb {
   font-style: bold;
   font-weight: bold;
   background-color: #01BAEF;
-  // background: rgba(255,0,240, .5);
   border: none;
   color: #2F2D2E;
   padding: 15px 32px;
@@ -66,12 +47,12 @@ animation: AnimationName 18s ease infinite;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  -webkit-transition-duration: 0.4s; /* Safari */
+  -webkit-transition-duration: 0.4s;
   transition-duration: 0.4s;
 }
 
 .titleb:hover {
-  background-color: #DB5461; /* Green */
+  background-color: #DB5461;
   color: #2F2D2E;
 
   }
@@ -85,4 +66,9 @@ animation: AnimationName 18s ease infinite;
   column-count:3;
   -moz-column-count:3;
   -webkit-column-count:3;
+}
+.nopaddingBottom {
+  color: white;
+  font-weight: bold;
+  padding-bottom: none;
 }

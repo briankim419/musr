@@ -46,7 +46,7 @@ class AlbumsContainer extends Component {
      // let handleAddNewAlbum = (formPayload) => this.handleSubmit(formPayload)
 
     return(
-      <div className="test wrapperform2 columnss">
+      <div className="test columnss">
         <AlbumsIndex
           albums = {this.state.albums}
         />

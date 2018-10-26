@@ -137,7 +137,7 @@ class ReviewsFormContainer extends Component {
     return(
       <div>{errorDiv}
         <form onSubmit={this.handleSubmit}>
-          <h3 className="ratingtitle">Rating: {rating}</h3>
+          <h3 className="ratingtitle title-font">Rating: {rating}</h3>
            <StarRatingComponent
              name="rate1"
              starCount={5}

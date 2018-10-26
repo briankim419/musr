@@ -173,7 +173,7 @@ class AlbumsFormContainer extends Component {
 
     return(
       <div className="  ">
-      <h1 className="center "> New Album</h1>
+      <h1 className="center title-font"> New Album</h1>
 
 
       <div className="small-11 large-centered columns wrapperform">{errorDiv}
@@ -217,11 +217,7 @@ class AlbumsFormContainer extends Component {
         onChange={this.handleChange}
         />
         </div>
-        <br></br>
-        <br></br>
-        <br></br>
-        <br></br>
-      <label className="floatL formtext">Genre</label>
+      <label className="floatL formtext ">Genre</label>
       <div className="field ">
         <div label = 'Genre' name = 'genre_id' value={this.state.genre_id} onChange={this.handleChange}>
           <input type="radio" value="1" name="genre_id"/> Rock
@@ -248,7 +244,7 @@ class AlbumsFormContainer extends Component {
 
           <aside>
 
-            <h2 className="center">Selected Files:</h2>
+            <h2 className=" nopaddingBottom">Selected Files:</h2>
             <ul>
               {
                 this.state.file.map(f => <li key={f.name}>{f.name} - {f.size} bytes</li>)
@@ -262,7 +258,6 @@ class AlbumsFormContainer extends Component {
       </form>
       </div>
       </div>
-
     )
   }
 };
