@@ -2,7 +2,6 @@ import React from 'react';
 import { Route, IndexRoute, Router, browserHistory } from 'react-router'
 import GenresIndexContainer from '../containers/GenresIndexContainer'
 import GenreShowContainer from '../containers/GenreShowContainer'
-import AlbumsIndex from '../components/AlbumsIndex'
 import TextInputField from '../components/TextInputField'
 import AlbumsContainer from '../containers/AlbumsContainer'
 import AlbumsFormContainer from '../containers/AlbumsFormContainer'
