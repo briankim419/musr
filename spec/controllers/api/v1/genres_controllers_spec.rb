@@ -12,7 +12,6 @@ RSpec.describe Api::V1::GenresController, type: :controller do
     it "should return a list of all genres" do
       get :index
       returned_json = JSON.parse(response.body)
-
       expect(response.status).to eq 200
       expect(response.content_type).to eq "application/json"
 

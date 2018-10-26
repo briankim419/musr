@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import AlbumsContainer from './AlbumsContainer'
 
 class GenreShowContainer extends Component {
   constructor(props) {
@@ -33,7 +34,13 @@ class GenreShowContainer extends Component {
 
   render(){
     return(
-      <h1>{this.state.genre.name}</h1>
+      <div>
+        <h1>{this.state.genre.name}</h1>
+        <AlbumsContainer
+          genreId = {this.props.params.id}
+        />
+      </div>
+
     )
   }
 }
