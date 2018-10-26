@@ -7,8 +7,7 @@ class ReviewsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: [],
-      cUser: null
+      reviews: []
     }
     this.addNewReview = this.addNewReview.bind(this);
   }
@@ -30,17 +29,23 @@ class ReviewsIndexContainer extends Component {
     .then(response => response.json())
     .then(fetchedReviews => {
       this.setState({ reviews: fetchedReviews.reviews})
-      this.setState({ cUser: this.props.currentUser})
-
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
 
   render(){
+
     let allReviews = this.state.reviews
     let reviewList
     let reviewForm
-    console.log(this.state.reviews)
+    if (this.props.currentUser !== null) {
+      reviewForm = <ReviewsFormContainer
+        genreId={this.props.genreId}
+        albumId={this.props.albumId}
+        addNewReview={this.addNewReview}
+      />
+    }
+
     if (Array.isArray(allReviews) && allReviews.length != 0) {
       reviewList = allReviews.map(review =>
       <div className="reviewstile">
@@ -52,18 +57,11 @@ class ReviewsIndexContainer extends Component {
               editing={false}
               starCount={5}
               value={review.rating} />
-            <p>{review.user.user_name}: {review.body}</p>
+            <p>{review.body}</p>
           </div>
         </div>
       </div>
     )
-    if (this.state.cUser !== null) {
-      reviewForm = <ReviewsFormContainer
-        genreId={this.props.genreId}
-        albumId={this.props.albumId}
-        addNewReview={this.addNewReview}
-      />
-    }
 
     }
     return(
