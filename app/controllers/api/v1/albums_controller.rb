@@ -27,7 +27,6 @@ class Api::V1::AlbumsController < ApplicationController
   def create
       data = params
       album = Album.new(album_params)
-
     if album.save
       render json: { album: album }, adapter: :json
     else

@@ -16,7 +16,8 @@ class AlbumShowContainer extends Component {
       genre:"",
       album_art:"",
       error: "",
-      reviews: []
+      reviews: [],
+      current_user: null
 
     }
   }
@@ -38,7 +39,7 @@ class AlbumShowContainer extends Component {
         this.setState({ error: body.error })
       } else {
         let fetchedAlbum = body.album
-        this.setState({ id: fetchedAlbum.id, name: fetchedAlbum.name, artist: fetchedAlbum.artist, description: fetchedAlbum.description, release_date: fetchedAlbum.release_date, genre: fetchedAlbum.genre, album_art: fetchedAlbum.album_art })
+        this.setState({ id: fetchedAlbum.id, name: fetchedAlbum.name, artist: fetchedAlbum.artist, description: fetchedAlbum.description, release_date: fetchedAlbum.release_date, genre: fetchedAlbum.genre, album_art: fetchedAlbum.album_art, current_user: fetchedAlbum.current_user })
       }
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
@@ -72,7 +73,8 @@ class AlbumShowContainer extends Component {
       <ReviewsIndexContainer
         genreId = {this.props.params.genre_id}
         albumId = {this.props.params.id}
-        />
+        currentUser = {this.state.current_user}
+      />
       </div>
     )
   }

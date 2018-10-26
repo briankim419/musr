@@ -5,6 +5,7 @@ class Album < ApplicationRecord
   validates :release_date, presence: true
   belongs_to :genre
 
-  has_many :reviews
+  mount_uploader :album_art, AlbumArtUploader
 
+  has_many :reviews
 end

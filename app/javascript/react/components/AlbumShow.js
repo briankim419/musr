@@ -2,7 +2,6 @@ import React from 'react';
 import { browserHistory, Link } from 'react-router';
 
 const AlbumShow = (props) => {
-
   return(
     <div className="row">
 
@@ -16,7 +15,7 @@ const AlbumShow = (props) => {
         </div>
 
         <div className="album_art">
-        <img src={props.album_art} />
+        <img src={props.album_art.url} />
         </div>
 
       </div>

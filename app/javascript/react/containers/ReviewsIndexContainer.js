@@ -7,7 +7,8 @@ class ReviewsIndexContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      reviews: []
+      reviews: [],
+      cUser: null
     }
     this.addNewReview = this.addNewReview.bind(this);
   }
@@ -15,8 +16,6 @@ class ReviewsIndexContainer extends Component {
    let newReviews = this.state.reviews.concat(reviewPayload)
    this.setState({ reviews: newReviews })
   }
-
-/// ReviewsIndexContainer.js:35 Error in fetch: allReviews.map is not a function
   componentDidMount() {
     fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews`)
     .then(response => {
@@ -31,6 +30,8 @@ class ReviewsIndexContainer extends Component {
     .then(response => response.json())
     .then(fetchedReviews => {
       this.setState({ reviews: fetchedReviews.reviews})
+      this.setState({ cUser: this.props.currentUser})
+
     })
     .catch(error => console.error(`Error in fetch: ${error.message}`));
   }
@@ -38,29 +39,37 @@ class ReviewsIndexContainer extends Component {
   render(){
     let allReviews = this.state.reviews
     let reviewList
+    let reviewForm
     console.log(this.state.reviews)
     if (Array.isArray(allReviews) && allReviews.length != 0) {
       reviewList = allReviews.map(review =>
+      <div className="reviewstile">
         <div className="reviews" key={review.id}>
-          <div className="reviews-content">
+          <div className="reviews-content ">
             <StarRatingComponent
               key={review.id}
               name="app4"
               editing={false}
               starCount={5}
               value={review.rating} />
-            <p>{review.body}</p>
+            <p>{review.user.user_name}: {review.body}</p>
           </div>
         </div>
-      )
+      </div>
+    )
+    if (this.state.cUser !== null) {
+      reviewForm = <ReviewsFormContainer
+        genreId={this.props.genreId}
+        albumId={this.props.albumId}
+        addNewReview={this.addNewReview}
+      />
+    }
+
     }
     return(
       <div>
-        <ReviewsFormContainer
-          genreId={this.props.genreId}
-          albumId={this.props.albumId}
-          addNewReview={this.addNewReview}
-          />
+        {reviewForm}
+        <h3 className="center titleBorder">Reviews</h3>
         {reviewList}
       </div>
 

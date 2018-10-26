@@ -6,10 +6,11 @@ before_action :authenticate_user!
   end
 
   def new
+    authorize_user
   end
 
   private
-  
+
   def authorize_user
     if !user_signed_in? || !current_user.admin?
       raise ActionController::RoutingError.new("Not Found")

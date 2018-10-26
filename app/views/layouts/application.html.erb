@@ -21,7 +21,7 @@
     <section class="top-bar-section">
       <ul class = "right">
       <% if user_signed_in? %>
-        <li><%= link_to "New Albums", new_album_path %></li>
+        <li><%= link_to "Add New Albums", new_album_path %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
         <% if current_user.admin? %>
           <li><%= link_to "Admin Section", admin_path %></li>
@@ -51,7 +51,7 @@
         <%= value %>
       </div>
     <%- end -%>
-    <a href="#" class="close">&times;</a>
+    <a href="#" class="close"></a>
   </div>
   <div class="center row testALL">
     <%= yield %>

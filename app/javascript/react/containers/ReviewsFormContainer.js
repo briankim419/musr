@@ -105,7 +105,7 @@ class ReviewsFormContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(body => {
+      .then(body => {  
         //  instead of the below, you want to add the `body.review` to the existing list in state
         // Have a function in ReviewsIndexContainer called `addNewReview` that takes in a review and adds it (concat) to `this.state.reviews`
         // Pass that function down as a prop to ReviewsFormContainer
@@ -138,7 +138,7 @@ class ReviewsFormContainer extends Component {
              onStarClick={this.onStarClick.bind(this)}
            />
            <div className="reviewtile">
-                    <label className="reviewfont">What are your opinions on this album?</label>
+            <label className="reviewfont">What are your opinions on this album?</label>
          <input
            name='body'
            type = 'textarea'

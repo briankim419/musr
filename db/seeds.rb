@@ -25,7 +25,7 @@ Album.create(
   artist:"The Jimi Hendrix Experience",
   release_date:"23/08/1967",
   genre_id:1,
-  album_art: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/13/511p5QqAyEL._SS500.jpg"
+  remote_album_art_url: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/13/511p5QqAyEL._SS500.jpg"
 )
 Album.create(
   name:"Back in Black",
@@ -33,7 +33,7 @@ Album.create(
   artist:"AC/DC",
   release_date:"25/07/1980",
   genre_id:1,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/14/61sJIfuUSiL._SL1500_.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/14/61sJIfuUSiL._SL1500_.jpg"
 )
 
 Album.create(
@@ -42,7 +42,7 @@ Album.create(
   artist:"Led Zeppelin",
   release_date:"12/11/2007",
   genre_id:1,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/15/81vhXYdaAkL._SL1500_.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/15/81vhXYdaAkL._SL1500_.jpg"
 )
 
 Album.create(
@@ -51,7 +51,7 @@ Album.create(
   artist:"Nas",
   release_date:"19/04/1994",
   genre_id:2,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/16/81oJg8R1C4L._SL1500_.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/16/81oJg8R1C4L._SL1500_.jpg"
 )
 
 Album.create(
@@ -60,7 +60,7 @@ Album.create(
   artist:"Eminem",
   release_date:"23/05/2000",
   genre_id:2,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/17/67w0mk82qncrv3y7l79nk3nvn.800x800x1.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/17/67w0mk82qncrv3y7l79nk3nvn.800x800x1.jpg"
 )
 
 Album.create(
@@ -69,7 +69,7 @@ Album.create(
   artist:"Drake",
   release_date:"29/06/2018",
   genre_id:2,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/18/220px-Scorpion_by_Drake.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/18/220px-Scorpion_by_Drake.jpg"
 )
 
 Album.create(
@@ -78,7 +78,7 @@ Album.create(
   artist:"Taylor Swift",
   release_date:"22/10/2012",
   genre_id:3,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/19/redcd_550x550.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/19/redcd_550x550.jpg"
 
 )
 
@@ -88,7 +88,7 @@ Album.create(
   artist:"Chris Stapleton",
   release_date:"05/05/2015",
   genre_id:3,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/20/9b98dd54-bc08-40f2-8ca1-f411a0006920_1.bee25bc6bdf2fae48828d69ea16a7e6c.jpeg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/20/9b98dd54-bc08-40f2-8ca1-f411a0006920_1.bee25bc6bdf2fae48828d69ea16a7e6c.jpeg"
 )
 
 Album.create(
@@ -97,7 +97,7 @@ Album.create(
   artist:"Jason Aldean",
   release_date:"09/09/2016",
   genre_id:3,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/21/9de40a387aa805a624bc1668e4e7e855.1000x1000x1.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/21/9de40a387aa805a624bc1668e4e7e855.1000x1000x1.jpg"
 )
 
 Album.create(
@@ -106,7 +106,7 @@ Album.create(
   artist:"Daft Punk",
   release_date:"26/02/2001",
   genre_id:4,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/22/R-136430-1481404839-1193.png.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/22/R-136430-1481404839-1193.png.jpg"
 )
 
 Album.create(
@@ -115,7 +115,7 @@ Album.create(
   artist:"Major Lazer",
   release_date:"01/06/2015",
   genre_id:4,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/23/1200x630bb.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/23/1200x630bb.jpg"
 )
 
 Album.create(
@@ -124,7 +124,7 @@ Album.create(
   artist:"Four Tet",
   release_date:"29/09/2017",
   genre_id:4,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/24/a2586093619_10.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/24/a2586093619_10.jpg"
 )
 
 Album.create(
@@ -133,7 +133,7 @@ Album.create(
   artist:"Miles Davis",
   release_date:"17/08/1959",
   genre_id:5,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/25/81O-f8VghNL._SL1500_.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/25/81O-f8VghNL._SL1500_.jpg"
 )
 
 Album.create(
@@ -142,7 +142,7 @@ Album.create(
   artist:"John Coltrane",
   release_date:"02/02/1958",
   genre_id:5,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/26/51_53sYbnlL.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/26/51_53sYbnlL.jpg"
 )
 
 Album.create(
@@ -151,7 +151,7 @@ Album.create(
   artist:"Kamasi Washington",
   release_date:"05/05/2015",
   genre_id:5,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/30/kamasi-washington-the-epicjpg.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/30/kamasi-washington-the-epicjpg.jpg"
 )
 
 Album.create(
@@ -160,7 +160,7 @@ Album.create(
   artist:"Yo-Yo Ma",
   release_date:"04/04/2004",
   genre_id:6,
-  album_art: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/27/0002690672.jpg"
+  remote_album_art_url: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/27/0002690672.jpg"
 )
 
 Album.create(
@@ -169,7 +169,7 @@ Album.create(
   artist:"J.S. Bach and the Academy of St. Martin in the Fields",
   release_date:"02/08/1958",
   genre_id:6,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/28/61B9qix_D5L._SX466_.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/28/61B9qix_D5L._SX466_.jpg"
 )
 
 Album.create(
@@ -178,5 +178,5 @@ Album.create(
   artist:"Byron Janis & Minneapolis Symphony Orchestra & Antal Doráti",
   release_date:"12/12/1993",
   genre_id:6,
-  album_art:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/29/MI0001110794.jpg"
+  remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/29/MI0001110794.jpg"
 )

@@ -21,8 +21,8 @@ i{
 }
 
 .reviews{
-  border-top:5px solid black;
-  border-bottom: 5px solid black;">
+  border-top:2px solid black;
+  border-bottom: 2px solid black;">
   width: 60%;
   margin: 5px;
   background-color: white;
@@ -32,4 +32,8 @@ i{
   margin: 10px;
   text-align: left;
   color: black;
+}
+
+.titleBorder{
+  border-top: 3px solid white; 
 }
