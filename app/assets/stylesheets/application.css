@@ -22,7 +22,7 @@ i{
 
 .reviews{
   border-top:2px solid black;
-  border-bottom: 2px solid black;">
+  border-bottom: 2px solid black;
   width: 60%;
   margin: 5px;
   background-color: white;
@@ -35,5 +35,5 @@ i{
 }
 
 .titleBorder{
-  border-top: 3px solid white; 
+  border-top: 3px solid white;
 }
