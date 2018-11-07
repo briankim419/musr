@@ -86,6 +86,10 @@ class ReviewsFormContainer extends Component {
       this.props.addNewReview({rating: this.state.rating, body: this.state.body})
       this.handleClearForm()
 
+      let errorState = this.state.errors
+      delete errorState.inputError
+      this.setState({ errors: errorState})
+
 
       fetch(`/api/v1/genres/${this.props.genreId}/albums/${this.props.albumId}/reviews`, {
         credentials: 'same-origin',
@@ -105,11 +109,7 @@ class ReviewsFormContainer extends Component {
         }
       })
       .then(response => response.json())
-      .then(body => {  
-        //  instead of the below, you want to add the `body.review` to the existing list in state
-        // Have a function in ReviewsIndexContainer called `addNewReview` that takes in a review and adds it (concat) to `this.state.reviews`
-        // Pass that function down as a prop to ReviewsFormContainer
-        // Call that function here:
+      .then(body => {
       })
       .catch(error => console.error(`Error in fetch: ${error.message}`));
     }

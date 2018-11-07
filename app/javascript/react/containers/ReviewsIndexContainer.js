@@ -34,7 +34,6 @@ class ReviewsIndexContainer extends Component {
   }
 
   render(){
-
     let allReviews = this.state.reviews
     let reviewList
     let reviewForm
