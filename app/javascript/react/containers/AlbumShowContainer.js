@@ -34,7 +34,7 @@ class AlbumShowContainer extends Component {
       }
     })
     .then(response => response.json())
-    .then(body => { 
+    .then(body => {
       if(body.error) {
         this.setState({ error: body.error })
       } else {
