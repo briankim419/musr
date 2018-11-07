@@ -34,9 +34,12 @@ class GenreShowContainer extends Component {
 
   render(){
     return(
-      <div>
-        <h1>{this.state.genre.name}</h1>
+
+      <div className="center " >
+        <h1 className="center title-font">{this.state.genre.name}</h1>
+
         <AlbumsContainer
+
           genreId = {this.props.params.id}
         />
       </div>

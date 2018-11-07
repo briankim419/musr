@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import GenreTile from '../components/GenreTile'
-
 class GenresIndexContainer extends Component {
   constructor(props) {
     super(props);
@@ -12,7 +11,6 @@ class GenresIndexContainer extends Component {
   componentDidMount() {
     fetch('/api/v1/genres')
     .then(response => {
-
       if (response.ok) {
         return response;
       } else {
@@ -33,23 +31,29 @@ class GenresIndexContainer extends Component {
   render(){
     let genres = this.state.genres.map(genre => {
       return(
+
         <GenreTile
           key={genre.id}
           id={genre.id}
           name={genre.name}
+
         />
       )
     })
 
     return(
-      <div className="row">
-        <div className="small-12 large-centered columns">
-          <h1>Genres</h1>
-          {genres}
-        </div>
-      </div>
+   <div className="center ">
+      <h1 className="center title-font">Pick Your Genre</h1>
+
+      <div id="">
+      {genres}
+    </div>
+    </div>
     )
   }
 }
+
+
+
 
 export default GenresIndexContainer;

@@ -15,3 +15,25 @@
  *= require foundation_and_overrides
 
  */
+
+i{
+  font-size: 30px;
+}
+
+.reviews{
+  border-top:2px solid black;
+  border-bottom: 2px solid black;">
+  width: 60%;
+  margin: 5px;
+  background-color: white;
+}
+
+.reviews-content{
+  margin: 10px;
+  text-align: left;
+  color: black;
+}
+
+.titleBorder{
+  border-top: 3px solid white; 
+}

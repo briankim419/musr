@@ -2,7 +2,6 @@ import React from 'react';
 import { browserHistory, Link } from 'react-router';
 
 const AlbumShow = (props) => {
-
   return(
     <div className="row">
 
@@ -16,19 +15,19 @@ const AlbumShow = (props) => {
         </div>
 
         <div className="album_art">
-        <img src={props.album_art} />
+        <img src={props.album_art.url} />
         </div>
 
       </div>
 
 
-        <div className="album-name-description large-6 columns">
 
+<div className="album-name-description large-6 columns  ">
           <div className="album-name">
             {props.name}
           </div>
 
-          <div className="album-description">
+          <div className="album-description album-description-tile ">
           {props.description}
           </div>
 

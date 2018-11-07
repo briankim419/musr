@@ -1,5 +1,6 @@
 class Api::V1::AlbumsController < ApplicationController
   protect_from_forgery unless: -> { request.format.json? }
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @genre = Genre.find(params[:genre_id])
@@ -8,7 +9,12 @@ class Api::V1::AlbumsController < ApplicationController
   end
 
   def show
-    render json: Album.find(params[:id])
+    album = Album.find(params[:id])
+    if album.genre.id == params[:genre_id].to_i
+      render json: album
+    else
+      render json: {error: "Album does not exist"}
+    end
   end
 
   def new
@@ -19,8 +25,8 @@ class Api::V1::AlbumsController < ApplicationController
   end
 
   def create
-    album = Album.new(album_params)
-
+      data = params
+      album = Album.new(album_params)
     if album.save
       render json: { album: album }, adapter: :json
     else
@@ -31,6 +37,6 @@ class Api::V1::AlbumsController < ApplicationController
   private
 
   def album_params
-    params.require(:album).permit(:name, :artist, :description, :release_date, :genre_id, :album_art)
+    params.permit(:name, :artist, :description, :release_date, :genre_id, :album_art)
   end
 end

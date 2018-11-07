@@ -1,0 +1,133 @@
+.container{
+  text-align: center;
+  align-items: center;
+  box-sizing: border-box
+}
+
+#Jazz {
+  background-image: url(jazzGenre.jpg);
+}
+#Classical {
+  background-image: url(classicalGenre.jpg);
+}
+#Electronic {
+  background-image: url(electronicGenre.jpg);
+}
+#Country {
+  background-image: url(countryGenre.jpg);
+}
+#Hip-Hop {
+  background-image: url(rapGenre.jpg);
+}
+
+#Rock {
+  background-image: url(rockGenre.jpg);
+}
+.button2 {
+  font-weight: bold;
+  // background-color: #8D3B72;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  box-shadow: 0 9px #999;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  width: 100%;
+  height: 350px;
+
+}
+
+.button2:hover {
+  background-color: #01BAEF;
+  color: #DB5461;
+
+}
+.button2:active {
+  background-color: #85CB33;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.text{
+  font-weight: bold;
+  font-size: 16px;
+}
+.titlePadding {
+  margin-bottom: 10px;
+}
+.columnss{
+  margin: auto;
+}
+.columns{
+ box-sizing: border-box
+}
+
+.tint {
+  position: sticky;
+  margin: auto;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.tint:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,255,255, 0.5);
+  transition: all .3s linear;
+
+}
+
+.tint:hover:before { background: none; }
+
+.t2:before { background: rgba(0,0,255, 0.5); }
+.t3:before { background: rgba(255,0,0, 0.5); }
+.t4:before { background: rgba(0,255,0, 0.5); }
+.t5:before { background: rgba(255,0,240, 0.5); }
+.t6:before { background: rgba(1,186,239, 0.5); }
+
+.albumtilebutton {
+  font-weight: bold;
+  background-color: #8D3B72;
+  border: none;
+  color: #2F2D2E;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10;
+  box-shadow: 0 9px #999;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  width: 75%;
+  height: 75%;
+  margin: 4px;
+  margin-bottom: 20px;
+}
+
+.albumtilebutton:hover {
+  background-color: #01BAEF;
+  color: #2F2D2E;
+
+}
+.albumtilebutton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.genresbackround{
+  background-color: #2F2D2E;
+  margin: auto;
+}

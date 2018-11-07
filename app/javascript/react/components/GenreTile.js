@@ -3,11 +3,18 @@ import { Link } from 'react-router';
 
 const GenreTile = (props) => {
   return(
-    <div className="genre-tile">
-      <Link to={`/genres/${props.id}`}>
-        <p>{props.name}</p>
+
+    <div className="genre-tile small-12 large-4 columns container  ">
+
+      <Link to={`/genres/${props.id}`} >
+
+      <button id= {props.name} className="button2 tint t6">
+      <p>{props.name}</p>
+     </button>
+
       </Link>
-    </div>
+      </div>
+
   )
 }
 

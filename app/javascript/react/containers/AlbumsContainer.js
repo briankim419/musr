@@ -52,8 +52,10 @@ class AlbumsContainer extends Component {
        )
      })
     return(
-      <div>
-        {albums}
+      <div className="test columnss">
+        <AlbumsIndex
+          albums = {this.state.albums}
+        />
       </div>
     )
   }

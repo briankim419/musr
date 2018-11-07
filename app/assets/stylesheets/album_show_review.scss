@@ -1,0 +1,53 @@
+.reviewtile {
+  background-color: #01BAEF;
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.reviewstile {
+  background-color: #01BAEF;
+  width: 75%;
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.reviewfont {
+  color: black;
+  font-size: 18;
+  font-weight: bold;
+
+}
+
+.ratingtitle {
+  text-align: inherit;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+.ratingtitle {
+  color: white;
+  cursor: pointer;
+  transform: translateY(4px);
+}
+.ratingtitle:hover {
+    color: #01BAEF;
+}
+
+i{
+  font-size: 30px;
+font-weight: bold;
+}
+i:hover {
+  color: #DB5461;
+}
