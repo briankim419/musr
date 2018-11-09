@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AlbumsFormContainer from './AlbumsFormContainer';
 import TextInputField from '../components/TextInputField';
+import AlbumsIndex from '../components/AlbumsIndex';
 import { Link } from 'react-router'
 import AlbumTile from '../components/AlbumTile'
 
