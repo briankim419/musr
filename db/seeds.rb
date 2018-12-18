@@ -15,7 +15,7 @@ genre_info = [
   {name: 'Classical'}#6
 ]
 rock = Genre.create(genre_info[0])
-hip-hop = Genre.create(genre_info[1])
+hiphop = Genre.create(genre_info[1])
 country = Genre.create(genre_info[2])
 electronic = Genre.create(genre_info[3])
 jazz = Genre.create(genre_info[4])
@@ -54,7 +54,7 @@ Album.create(
   description:"Styled as a hardcore hip hop album, Illmatic features multi-syllabic internal rhymes and inner-city narratives based on Nas' experiences in Queensbridge, New York.",
   artist:"Nas",
   release_date:"19/04/1994",
-  genre_id:hip-hop,
+  genre_id:hiphop,
   remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/16/81oJg8R1C4L._SL1500_.jpg"
 )
 
@@ -63,7 +63,7 @@ Album.create(
   description:"Released a year after Eminem's breakout album The Slim Shady LP, the album features more introspective lyricism including the rapper's response to his sudden rise to fame and controversy surrounding his lyrics.",
   artist:"Eminem",
   release_date:"23/05/2000",
-  genre_id:hip-hop,
+  genre_id:hiphop,
   remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/17/67w0mk82qncrv3y7l79nk3nvn.800x800x1.jpg"
 )
 
@@ -72,7 +72,7 @@ Album.create(
   description:"Scorpion is the fifth studio album by Canadian rapper Drake. It was released on June 29, 2018 by Young Money Entertainment, Cash Money Records and Republic Records. Scorpion is a double album consisting of 25 tracks. Its A-side is primarily hip hop, whilst its B-side has been described as R&B and pop.",
   artist:"Drake",
   release_date:"29/06/2018",
-  genre_id:hip-hop,
+  genre_id:hiphop,
   remote_album_art_url:"https://musr-development.s3.amazonaws.com/uploads/album/album_art/18/220px-Scorpion_by_Drake.jpg"
 )
 
