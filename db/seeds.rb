@@ -20,7 +20,7 @@ Album.create(
   description:"Are You Experienced is the debut studio album by English-American rock band the Jimi Hendrix Experience. Released in 1967, the LP was an immediate critical and commercial success, and it is widely regarded as one of the greatest debuts in the history of rock music.",
   artist:"The Jimi Hendrix Experience",
   release_date:"23/08/1967",
-  genre_id:1
+  genre_id:1,
   remote_album_art_url: "https://musr-development.s3.amazonaws.com/uploads/album/album_art/13/511p5QqAyEL._SS500.jpg"
 )
 Album.create(
